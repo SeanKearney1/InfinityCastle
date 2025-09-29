@@ -9,12 +9,13 @@ public class CoinScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.linearVelocityY = MoveSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocityY = MoveSpeed;
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)

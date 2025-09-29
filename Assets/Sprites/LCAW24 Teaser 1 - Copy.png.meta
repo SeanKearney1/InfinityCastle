@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 55c13d8eeaef3614eb9ce7dd74bfa171
+guid: d6ce0d11ce303154e8f0659171d81817
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4679979262270963875
-    second: coin_basic_placeholder_0
+      213: -3096614163911955881
+    second: LCAW24 Teaser 1 - Copy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coin_basic_placeholder_0
+      name: LCAW24 Teaser 1 - Copy_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 5
-        width: 53
-        height: 53
+        x: 0
+        y: 0
+        width: 1280
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d5ff42418af5d0fb0800000000000000
-      internalID: -4679979262270963875
+      spriteID: 75aa59113dd9605d0800000000000000
+      internalID: -3096614163911955881
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      coin_basic_placeholder_0: -4679979262270963875
+      LCAW24 Teaser 1 - Copy_0: -3096614163911955881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

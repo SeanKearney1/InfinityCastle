@@ -16,7 +16,7 @@ public class Muzan : MonoBehaviour
 
     private double ScoreIncrement_time_stamp = 0.0;
 
-    private int[] PointTable = { 0, 100, 200, 500, 1000 };
+    private int[] PointTable = { 0, 100, 200, 1000 };
 
 
     /*
@@ -25,7 +25,6 @@ public class Muzan : MonoBehaviour
         0: 1/10th of a second = 1 point
         1: Basic Coin = 100 points
         2: Killing a demon = 200 points
-        3: Destroying a building = 500 points
         4: Special Coin = 1,000 points
     */
 
