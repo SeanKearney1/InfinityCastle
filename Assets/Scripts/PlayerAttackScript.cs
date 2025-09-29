@@ -6,8 +6,8 @@ public class PlayerAttackScript : MonoBehaviour
     private double AttackDuration = 1.5;
     private double AttackCooldown = 3.0;
     private bool IsAttacking = false;
-    private double Attacking_time_stamp = 0.0;
-    private double Attack_cooldown_time_stamp = 0.0;
+    private double Attacking_time_stamp = -9999999.0;
+    private double Attack_cooldown_time_stamp = -9999999.0;
 
     private double GameTime = 0;
 
@@ -26,12 +26,12 @@ public class PlayerAttackScript : MonoBehaviour
 
         if (Attack_cooldown_time_stamp + AttackCooldown < GameTime)
         {
-            if (PlayerIndex == 0 && Input.GetKeyDown(KeyCode.Q))
+            if (PlayerIndex == 0 && Input.GetKeyDown(KeyCode.Space))
             {
                 Attacking_time_stamp = GameTime;
                 Attack_cooldown_time_stamp = GameTime;
             }
-            else if (PlayerIndex == 1 && Input.GetKeyDown(KeyCode.Space))
+            else if (PlayerIndex == 1 && Input.GetKeyDown(KeyCode.RightShift))
             {
                 Attacking_time_stamp = GameTime;
                 Attack_cooldown_time_stamp = GameTime;

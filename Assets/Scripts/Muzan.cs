@@ -1,6 +1,7 @@
 //using NUnit.Framework.Constraints;
-using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Muzan : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class Muzan : MonoBehaviour
     public GameObject Tanjiro;
     public GameObject Giyu;
 
-    private GameObject HighScores;
+    public GameObject HighScorePrefab;
+
+    private GameObject HighScoreManager;
 
     private int Player1Score = 0;
     private int Player2Score = 0;
@@ -33,7 +36,11 @@ public class Muzan : MonoBehaviour
     void Start()
     {
         GameTime = 0;
-        HighScores = GameObject.Find("HighScores");
+        HighScoreManager = GameObject.Find("HighScores");
+        if (HighScoreManager.IsUnityNull())
+        {
+            HighScoreManager = Instantiate(HighScorePrefab);
+        }
     }
 
     // Update is called once per frame
@@ -61,9 +68,9 @@ public class Muzan : MonoBehaviour
     {
         if (Tanjiro == null && Giyu == null)
         {
-            HighScores.GetComponent<HighScoreScript>().setCurrentRunScore(Player1Score,Player2Score);
-            HighScores.GetComponent<HighScoreScript>().addNewScorePlayer1(Player1Score);
-            HighScores.GetComponent<HighScoreScript>().addNewScorePlayer2(Player2Score);
+            HighScoreManager.GetComponent<HighScoreScript>().setCurrentRunScore(Player1Score,Player2Score);
+            HighScoreManager.GetComponent<HighScoreScript>().addNewScorePlayer1(Player1Score);
+            HighScoreManager.GetComponent<HighScoreScript>().addNewScorePlayer2(Player2Score);
             SceneManager.LoadScene("GameOverScene");
         }
     }

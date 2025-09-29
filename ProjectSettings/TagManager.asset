@@ -46,23 +46,29 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BackGround1
-    uniqueID: 3828163689
-    locked: 0
-  - name: BackGround2
-    uniqueID: 2142430457
+  - name: BackGround4
+    uniqueID: 1692925611
     locked: 0
   - name: BackGround3
     uniqueID: 3104123607
     locked: 0
-  - name: BackGround4
-    uniqueID: 1692925611
+  - name: BackGround2
+    uniqueID: 2142430457
+    locked: 0
+  - name: BackGround1
+    uniqueID: 3828163689
     locked: 0
   - name: Demon
     uniqueID: 2954983873
     locked: 0
   - name: Coins
     uniqueID: 2128259821
+    locked: 0
+  - name: PillarsWarning
+    uniqueID: 2114357753
+    locked: 0
+  - name: BuildingsWarning
+    uniqueID: 1678161737
     locked: 0
   - name: Player
     uniqueID: 1394093585

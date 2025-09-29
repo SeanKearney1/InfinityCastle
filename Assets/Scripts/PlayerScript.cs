@@ -71,7 +71,7 @@ public class PlayerScript : MonoBehaviour
                 DashCooldown_time_stamp = GameTime;
                 DashMultiplier = DashMultiplierMax;
             }
-            else if (PlayerIndex == 1 && Input.GetKeyDown(KeyCode.RightShift)) // is correct player pushing proper key.
+            else if (PlayerIndex == 1 && Input.GetKeyDown(KeyCode.RightControl)) // is correct player pushing proper key.
             {
                 CurrentlyDashing_time_stamp = GameTime;
                 DashCount--;
