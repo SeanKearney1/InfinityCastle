@@ -7,17 +7,21 @@ public class Nakime : MonoBehaviour
     public float DemonCooldown;
     public float PillarCooldown;
     public float BuildingCooldown;
-    private float timeStamp_Attack = 0.0f;
-    private float timeStamp_Demon = 0.0f;
-    private float timeStamp_Pillar = 0.0f;
-    private float timeStamp_Building = 0.0f;
+    private double timeStamp_Attack = 0.0;
+    private double timeStamp_Demon = 0.0;
+    private double timeStamp_Pillar = 0.0;
+    private double timeStamp_Building = 0.0;
     public GameObject DemonSpawner;
     public GameObject PillarSpawner;
     public GameObject BuildingSpawner;
 
+    public GameObject CoinSpawner;
+
+    private double GameTime;
+
     void Start()
     {
-        //CurrentAttackCooldown = AttackCooldown;
+        GameTime = 0;
     }
 
 
@@ -25,28 +29,33 @@ public class Nakime : MonoBehaviour
     void Update()
     {
 
-        if (timeStamp_Attack + AttackCooldown < Time.time) {
-            int Attack = Random.Range(0, 3);
-            timeStamp_Attack = Time.time;
+        //Debug.Log("GameTime: " + GameTime);
 
-            if (Attack == 0 && timeStamp_Demon + DemonCooldown < Time.time)
+        GameTime += Time.deltaTime;
+
+        if (timeStamp_Attack + AttackCooldown < GameTime)
+        {
+            int Attack = Random.Range(0, 3);
+            timeStamp_Attack = GameTime;
+
+            if (Attack == 0 && timeStamp_Demon + DemonCooldown < GameTime)
             {
                 DemonSpawner.GetComponent<DemonSpawnerScript>().SpawnDemon();
-                timeStamp_Demon = Time.time;
+                timeStamp_Demon = GameTime;
             }
-            if (Attack == 1 && timeStamp_Pillar + PillarCooldown < Time.time)
+            if (Attack == 1 && timeStamp_Pillar + PillarCooldown < GameTime)
             {
                 PillarSpawner.GetComponent<PillarSpawnerScript>().SpawnPillar();
-                timeStamp_Pillar = Time.time;
+                timeStamp_Pillar = GameTime;
             }
-            if (Attack == 2 && timeStamp_Building + BuildingCooldown < Time.time)
+            if (Attack == 2 && timeStamp_Building + BuildingCooldown < GameTime)
             {
                 BuildingSpawner.GetComponent<BuildingSpawnerScript>().SpawnBuilding();
-                timeStamp_Building = Time.time;
+                timeStamp_Building = GameTime;
             }
+
+            CoinSpawner.GetComponent<CoinSpawnerScript>().SpawnCoin();
         }
     }
-
-
 
 }

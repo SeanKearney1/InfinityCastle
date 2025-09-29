@@ -1,6 +1,6 @@
 using System;
-using UnityEditor.Callbacks;
-using UnityEditor.UI;
+//using UnityEditor.Callbacks;
+//using UnityEditor.UI;
 using UnityEngine;
 
 public class DemonLogicScript : MonoBehaviour
@@ -14,8 +14,8 @@ public class DemonLogicScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         DemonSpeed *= UnityEngine.Random.Range(0.8f, 1.2f);
-        Tanjiro = GameObject.Find("Player1");
-        Giyu = GameObject.Find("Player2");
+        Tanjiro = GameObject.Find("GameManager").GetComponent<Muzan>().Tanjiro;
+        Giyu = GameObject.Find("GameManager").GetComponent<Muzan>().Giyu;
     }
 
     // Update is called once per frame
@@ -25,14 +25,23 @@ public class DemonLogicScript : MonoBehaviour
         double TanjiroDistance = 0;
         double GiyuDistance = 0;
 
-        TanjiroDistance = Math.Sqrt(Math.Pow(Tanjiro.transform.position.x - this.gameObject.transform.position.x,2)+Math.Pow(Tanjiro.transform.position.y - this.gameObject.transform.position.y,2));
-        GiyuDistance = Math.Sqrt(Math.Pow(Giyu.transform.position.x - this.gameObject.transform.position.x,2)+Math.Pow(Giyu.transform.position.y - this.gameObject.transform.position.y,2));
-
-        if (TanjiroDistance <= GiyuDistance)
+        if (Tanjiro != null) {
+            TanjiroDistance = Math.Sqrt(Math.Pow(Tanjiro.transform.position.x - this.gameObject.transform.position.x, 2) + Math.Pow(Tanjiro.transform.position.y - this.gameObject.transform.position.y, 2));
+        }
+        else {
+            TanjiroDistance = 99999999;
+        }
+        if (Giyu != null) {
+            GiyuDistance = Math.Sqrt(Math.Pow(Giyu.transform.position.x - this.gameObject.transform.position.x, 2) + Math.Pow(Giyu.transform.position.y - this.gameObject.transform.position.y, 2));
+        }
+        else {
+            GiyuDistance = 99999999;
+        }
+        if (TanjiroDistance <= GiyuDistance && Tanjiro != null)
         {
             SetDirection(Tanjiro.transform.position);
         }
-        else
+        else if (Giyu != null)
         {
             SetDirection(Giyu.transform.position);
         }

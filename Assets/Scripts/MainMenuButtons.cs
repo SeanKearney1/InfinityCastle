@@ -3,12 +3,35 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButtons : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Play() {
+    public GameObject MainPanel;
+    public GameObject HighscorePanel;
+    public GameObject Player1HighScoreText;
+    public GameObject Player2HighScoreText;
+    void Start()
+    {
+        HighscorePanel.SetActive(false);
+    }
+    public void Play()
+    {
+
         SceneManager.LoadScene("GameScene");
     }
 
-    public void Exit() {
+    public void Exit()
+    {
         Application.Quit();
+    }
+
+    public void HighScores()
+    {
+        MainPanel.SetActive(false);
+        HighscorePanel.SetActive(true);
+        Player1HighScoreText.GetComponent<HighScoreDisplayScript>().UpdateHighScores();
+        Player2HighScoreText.GetComponent<HighScoreDisplayScript>().UpdateHighScores();
+    }
+    public void HighScoresBack()
+    {
+        MainPanel.SetActive(true);
+        HighscorePanel.SetActive(false);       
     }
 }
