@@ -71,6 +71,7 @@ public class Muzan : MonoBehaviour
             HighScoreManager.GetComponent<HighScoreScript>().setCurrentRunScore(Player1Score,Player2Score);
             HighScoreManager.GetComponent<HighScoreScript>().addNewScorePlayer1(Player1Score);
             HighScoreManager.GetComponent<HighScoreScript>().addNewScorePlayer2(Player2Score);
+            HighScoreManager.GetComponent<HighScoreScript>().UpdateTotalStats();
             SceneManager.LoadScene("GameOverScene");
         }
     }

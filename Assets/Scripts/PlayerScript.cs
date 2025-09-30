@@ -1,6 +1,7 @@
 //using NUnit.Framework.Constraints;
 //using Unity.VisualScripting;
 //using UnityEditor.UI;
+using System.Linq;
 using UnityEngine;
 //using UnityEngine.SceneManagement;
 //using UnityEngine.Timeline;
@@ -19,6 +20,7 @@ public class PlayerScript : MonoBehaviour
     private double DashCooldown = 2.0;
     private double DashCooldown_time_stamp = 0.0;
     private Rigidbody2D rb;
+    private GameObject[] InPlayerSphereIDs = {};
     private double GameTime = 0.0;
     void Start()
     {
@@ -85,29 +87,21 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    public bool IsPlayerDashing()
+    {
+        if (DashMultiplier != 1) {
+            return true;
+        }
+        return false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Demon"))
+        if (collision.CompareTag("Demon") && !GetComponentInChildren<PlayerAttackScript>().getIsAttacking())
         {
-            if (DashMultiplier == DashMultiplierMax)
-            {
-                Destroy(collision.gameObject);
-                if (PlayerIndex == 0) {
-                    GameObject.Find("GameManager").GetComponent<Muzan>().KilledDemomPlayer1();
-                }
-                else {
-                    GameObject.Find("GameManager").GetComponent<Muzan>().KilledDemomPlayer2();
-                }
-                
-            }
-            else
-            {
-                Destroy(this.gameObject);
-            }
+            Destroy(this.gameObject);
         }
     }
-
 
     private void OnTriggerExit2D(Collider2D collision)
     {

@@ -7,7 +7,6 @@ using UnityEngine;
 public class HighScoreDisplayScript : MonoBehaviour
 {
     public int PlayerIndex;
-    public GameObject HighScorePrefab;
 
     private GameObject HighScoreManager;
 
