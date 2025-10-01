@@ -20,12 +20,13 @@ public class MainGUIButtons : MonoBehaviour
     public GameObject Player1TotalStats;
     public GameObject Player2TotalStats;
 
-    private GameObject HighScoreManager;
+    private GameObject Muzan;
 
     private bool gamePaused = false;
     public int GameScene;
     void Start()
     {
+        Muzan = GameObject.Find("GameManager");
         MainMenuMainPanel.SetActive(false);
         InGameMainPanel.SetActive(false);
         GameOverMainPanel.SetActive(false);
@@ -154,16 +155,16 @@ public class MainGUIButtons : MonoBehaviour
 
     private void FillStats()
     {
-        if (HighScoreManager.IsUnityNull())
+        if (Muzan.IsUnityNull())
         {
-            HighScoreManager = GameObject.Find("HighScores");
+            Muzan = GameObject.Find("GameManager");
         }
-        if (HighScoreManager.IsUnityNull()) { return; }
+        if (Muzan.IsUnityNull()) { return; }
 
-        Player1Stats.GetComponent<TextMeshProUGUI>().text = HighScoreManager.GetComponent<HighScoreScript>().getPlayer1Stats();
-        Player2Stats.GetComponent<TextMeshProUGUI>().text = HighScoreManager.GetComponent<HighScoreScript>().getPlayer2Stats();
-        Player1TotalStats.GetComponent<TextMeshProUGUI>().text = HighScoreManager.GetComponent<HighScoreScript>().getPlayer1TotalStats();
-        Player2TotalStats.GetComponent<TextMeshProUGUI>().text = HighScoreManager.GetComponent<HighScoreScript>().getPlayer2TotalStats();
+        Player1Stats.GetComponent<TextMeshProUGUI>().text = Muzan.GetComponent<Muzan>().getStringPlayerStats(0);
+        Player2Stats.GetComponent<TextMeshProUGUI>().text = Muzan.GetComponent<Muzan>().getStringPlayerStats(1);
+        Player1TotalStats.GetComponent<TextMeshProUGUI>().text = Muzan.GetComponent<Muzan>().getStringPlayerTotalStats(0);
+        Player2TotalStats.GetComponent<TextMeshProUGUI>().text = Muzan.GetComponent<Muzan>().getStringPlayerTotalStats(1);
     }
 
 }

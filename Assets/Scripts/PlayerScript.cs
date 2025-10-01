@@ -2,7 +2,9 @@
 //using Unity.VisualScripting;
 //using UnityEditor.UI;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.VisualScripting.Dependencies.Sqlite.SQLite3;
 //using UnityEngine.SceneManagement;
 //using UnityEngine.Timeline;
 
@@ -20,11 +22,13 @@ public class PlayerScript : MonoBehaviour
     private double DashCooldown = 2.0;
     private double DashCooldown_time_stamp = 0.0;
     private Rigidbody2D rb;
-    private GameObject[] InPlayerSphereIDs = {};
     private double GameTime = 0.0;
+
+    private GameObject Muzan;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Muzan = GameObject.Find("GameManager");
     }
 
     void Update()
@@ -72,6 +76,10 @@ public class PlayerScript : MonoBehaviour
                 DashCount--;
                 DashCooldown_time_stamp = GameTime;
                 DashMultiplier = DashMultiplierMax;
+                if (!Muzan.IsUnityNull())
+                {
+                    Muzan.GetComponent<Muzan>().AddPlayerCurrentRunStat(0, 4);
+                }
             }
             else if (PlayerIndex == 1 && Input.GetKeyDown(KeyCode.RightControl)) // is correct player pushing proper key.
             {
@@ -79,6 +87,11 @@ public class PlayerScript : MonoBehaviour
                 DashCount--;
                 DashCooldown_time_stamp = GameTime;
                 DashMultiplier = DashMultiplierMax;
+                if (!Muzan.IsUnityNull())
+                {
+                    Muzan.GetComponent<Muzan>().AddPlayerCurrentRunStat(0, 4);
+                }
+
             }
         }
         if (CurrentlyDashing_time_stamp + DashDuration >= GameTime)

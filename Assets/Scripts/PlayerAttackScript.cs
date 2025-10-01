@@ -1,4 +1,5 @@
 //using UnityEditor.Toolbars;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
@@ -13,6 +14,7 @@ public class PlayerAttackScript : MonoBehaviour
     private double Attack_cooldown_time_stamp = -9999999.0;
 
     private GameObject[] ObjectsInKillAura = { };
+    private GameObject Muzan;
     private double GameTime = 0;
 
     private int PlayerIndex;
@@ -20,6 +22,7 @@ public class PlayerAttackScript : MonoBehaviour
     void Start()
     {
         PlayerIndex = this.GetComponentInParent<PlayerScript>().PlayerIndex;
+        Muzan = GameObject.Find("GameManager");
     }
 
     // Update is called once per frame
@@ -80,6 +83,9 @@ public class PlayerAttackScript : MonoBehaviour
         ObjectsInKillAura = AddObjectToArray(ObjectsInKillAura, collision.gameObject); // Adds newest collision.
         if (!IsAttacking && !GetComponentInParent<PlayerScript>().IsPlayerDashing()) { return; } // Continue if player is dashing or attacking.
 
+        int attack_dash_index = 5;
+        if (!IsAttacking) { attack_dash_index = 6; }
+
         for (int i = 0; i < ObjectsInKillAura.Length; i++)
         {
             if (ObjectsInKillAura[i].IsUnityNull()) // If the object has died.
@@ -94,14 +100,9 @@ public class PlayerAttackScript : MonoBehaviour
                     Destroy(ObjectsInKillAura[i]);
                     ObjectsInKillAura = RemoveFromArray(ObjectsInKillAura, i);
                     i--;
-                    if (PlayerIndex == 0)
-                    {
-                        GameObject.Find("GameManager").GetComponent<Muzan>().KilledDemomPlayer1();
-                    }
-                    else
-                    {
-                        GameObject.Find("GameManager").GetComponent<Muzan>().KilledDemomPlayer2();
-                    }
+
+                    Muzan.GetComponent<Muzan>().AddPlayerCurrentRunStat(PlayerIndex, attack_dash_index);
+
                 }
             }
         }

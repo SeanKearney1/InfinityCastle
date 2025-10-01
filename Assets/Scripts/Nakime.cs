@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Nakime : MonoBehaviour
@@ -15,6 +16,10 @@ public class Nakime : MonoBehaviour
     public GameObject PillarSpawner;
     public GameObject BuildingSpawner;
 
+    public GameObject Tanjiro;
+    public GameObject Giyu;
+    public GameObject Muzan;
+
     public GameObject CoinSpawner;
 
     private double GameTime;
@@ -22,6 +27,16 @@ public class Nakime : MonoBehaviour
     void Start()
     {
         GameTime = 0;
+
+        Muzan = GameObject.Find("GameManager");
+        if (!Muzan.IsUnityNull())
+        {
+            Muzan.GetComponent<Muzan>().NewRun();
+            Muzan.GetComponent<Muzan>().IntoTheInfinityCastle();
+            Muzan.GetComponent<Muzan>().Tanjiro = Tanjiro;
+            Muzan.GetComponent<Muzan>().Giyu = Giyu;
+        }
+
     }
 
 

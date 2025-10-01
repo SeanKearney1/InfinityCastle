@@ -169,4 +169,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinScript
   MoveSpeed: 5
-  CoinType: 1
+  CoinType: 2

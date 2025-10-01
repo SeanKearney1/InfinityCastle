@@ -8,32 +8,27 @@ public class HighScoreDisplayScript : MonoBehaviour
 {
     public int PlayerIndex;
 
-    private GameObject HighScoreManager;
+    private GameObject Muzan;
 
 
 
     public void UpdateHighScores()
     {
-        int[] scores = { -1, -1, -1, -1, -1 };
+        float[] scores = { -1, -1, -1, -1, -1 };
         String scores_str = "";
 
-        if (HighScoreManager.IsUnityNull())
+        if (Muzan.IsUnityNull())
         {
-            HighScoreManager = GameObject.Find("HighScores");
+            Muzan = GameObject.Find("GameManager");
         }
-        if (HighScoreManager.IsUnityNull()) {
+        if (Muzan.IsUnityNull()) {
             this.gameObject.GetComponent<TextMeshProUGUI>().text = "------\n------\n------\n------\n------";
             return; 
         }
 
-        if (PlayerIndex == 0)
-        {
-            scores = HighScoreManager.GetComponent<HighScoreScript>().getPlayer1HighScores();
-        }
-        else
-        {
-            scores = HighScoreManager.GetComponent<HighScoreScript>().getPlayer2HighScores();
-        }
+
+        scores = Muzan.GetComponent<Muzan>().getHighScores(PlayerIndex);
+
 
         for (int i = 0; i < scores.Length; i++)
         {

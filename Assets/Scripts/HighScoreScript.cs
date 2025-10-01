@@ -56,6 +56,23 @@ public class HighScoreScript : MonoBehaviour
         return scores;
     }
 
+    public int[] getPlayerCurrentRunStats(int player)
+    {
+        if (player == 0)
+        {
+            return CurrentRunPlayer1Stats;
+        }
+        return CurrentRunPlayer2Stats;
+    }
+    public void setPlayerCurrentRunStats(int player, int[] new_stats)
+    {
+        if (player == 0)
+        {
+            CurrentRunPlayer1Stats = new_stats;
+        }
+        CurrentRunPlayer2Stats = new_stats;
+    }
+
     public void addNewScorePlayer1(int score)
     {
         if (score > Player1HighScores[4])

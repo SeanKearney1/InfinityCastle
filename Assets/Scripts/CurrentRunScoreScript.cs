@@ -6,30 +6,19 @@ using UnityEngine;
 public class CurrentRunScoreScript : MonoBehaviour
 {
     public int PlayerIndex;
-    private GameObject HighScoreManager;
+    private GameObject Muzan;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        HighScoreManager = GameObject.Find("HighScores");
-        if (!HighScoreManager.IsUnityNull())
+        Muzan = GameObject.Find("GameManager");
+        if (!Muzan.IsUnityNull())
         {
-
-            int[] scores = HighScoreManager.GetComponent<HighScoreScript>().getCurrentRunScores();
-            if (PlayerIndex == 0)
-            {
-                GetComponent<TextMeshProUGUI>().text = "" + scores[0];
-
-            }
-            else
-            {
-                GetComponent<TextMeshProUGUI>().text = "" + scores[1];
-            }
+            GetComponent<TextMeshProUGUI>().text = "" + Muzan.GetComponent<Muzan>().getPlayerCurrentRunStat(PlayerIndex, 8);
         }
         else
         {
-            int[] scores = { -1, -1, -1, -1, -1 };
-            GetComponent<TextMeshProUGUI>().text = "" + scores[0];
-            GetComponent<TextMeshProUGUI>().text = "" + scores[1];
+            GetComponent<TextMeshProUGUI>().text = "-1";
+            GetComponent<TextMeshProUGUI>().text = "-1";
         }
 
     }
