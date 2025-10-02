@@ -1,5 +1,6 @@
 //using NUnit.Framework;
 //using UnityEditor.Callbacks;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PillarLogicScript : MonoBehaviour
@@ -15,6 +16,8 @@ public class PillarLogicScript : MonoBehaviour
     private float time_stamp;
 
     private Rigidbody2D rb;
+
+    private GameObject[] ParentedObjects = { };
 
     void Start()
     {
@@ -43,7 +46,7 @@ public class PillarLogicScript : MonoBehaviour
             dir_multiplier = -1;
         }
         rb.linearVelocityX = MoveSpeed * dir_multiplier;
-
+        MoveChildren(dir_multiplier);
     }
 
 
@@ -58,6 +61,62 @@ public class PillarLogicScript : MonoBehaviour
         WarnTime = warn_time;
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            //Vector3 player_pos = collision.gameObject.transform.position;
+            //Vector3 pillar_pos = gameObject.transform.position;
+            //Debug.Log("PLAYER!!");
+            //if (player_pos.x > pillar_pos.x && player_pos.x < pillar_pos.x) {
+                ParentedObjects = AddObjectToArray(ParentedObjects, collision.gameObject);
+            //}
+        }
+    }
     
+
+
+    private void MoveChildren(int dir_multiplier)
+    {
+        for (int i = 0; i < ParentedObjects.Length; i++)
+        {
+            if (ParentedObjects[i].IsUnityNull())
+            {
+                ParentedObjects = RemoveFromArray(ParentedObjects, i);
+                i--;
+            }
+            else
+            {
+                ParentedObjects[i].GetComponent<Rigidbody2D>().linearVelocityX = MoveSpeed * dir_multiplier;
+            }
+        }
+    }
+    private GameObject[] AddObjectToArray(GameObject[] array, GameObject add_object)
+    {
+        GameObject[] new_array = new GameObject[array.Length + 1];
+        for (int i = 0; i < array.Length; i++)
+        {
+            new_array[i] = array[i];
+        }
+        new_array[array.Length] = add_object;
+        return new_array;
+    }
+
+    private GameObject[] RemoveFromArray(GameObject[] array, int remove_index)
+    {
+        int HmmWhyIsTheArrayDeletingTheEnd = 0;
+        if (array.Length <= 1) { return new GameObject[0]; } // If array is only 1 item, just return a blank array.
+        GameObject[] new_array = new GameObject[array.Length - 1];
+        for (int i = 0; i < new_array.Length; i++)
+        {
+            if (i == remove_index)
+            {
+                HmmWhyIsTheArrayDeletingTheEnd++;
+            }
+            new_array[i] = array[i + HmmWhyIsTheArrayDeletingTheEnd];
+        }
+        return new_array;
+    }
+
 
 }

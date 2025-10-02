@@ -80,14 +80,14 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1272997715
-  m_SortingLayer: 9
+  m_SortingLayer: 11
   m_SortingOrder: 1
-  m_Sprite: {fileID: -7530597637293110954, guid: 8701ac0d0adee284893e0bd6376996a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 492cf8ac5844f0640a8616aa5117fd3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 0.62417746, y: 0.64}
+  m_Size: {x: 0.64, y: 0.86}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dabca0ad6abcb2840830b3d9237a8dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildingLogicScript
-  MoveSpeed: 75
+  MoveSpeed: 25
   ExpireTime: 3
 --- !u!61 &5098279156493501940
 BoxCollider2D:
@@ -145,13 +145,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.62417746, y: 0.64}
+    oldSize: {x: 0.64, y: 0.86}
+    newSize: {x: 0.64, y: 0.86}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.64, y: 0.86}
   m_EdgeRadius: 0
 --- !u!50 &6613446251002758339
 Rigidbody2D:

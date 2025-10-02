@@ -98,6 +98,7 @@ public class MainGUIButtons : MonoBehaviour
     public void ExitToMainMenu()
     {
         SceneManager.LoadScene("TitleScene");
+        Muzan.GetComponent<Muzan>().LeaveTheCastle();
         Time.timeScale = 1.0f;
     }
 
@@ -143,10 +144,7 @@ public class MainGUIButtons : MonoBehaviour
         InGameMainPanel.SetActive(false);
         GameOverMainPanel.SetActive(false);
         HighscorePanel.SetActive(false);
-        if (GameScene != 1)
-        {
-            PauseDarkness.SetActive(false);
-        }
+        PauseDarkness.SetActive(true);
         StatsPanel.SetActive(true);
 
         FillStats();

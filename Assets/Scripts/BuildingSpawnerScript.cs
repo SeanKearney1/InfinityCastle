@@ -45,7 +45,7 @@ public class BuildingSpawnerScript : MonoBehaviour
         Vector2 screen_vec = NoSpawn.GetComponent<BoxCollider2D>().size;
 
         spawn_vec.x = Random.Range((-1 * screen_vec.x + pixel_size)/2, (screen_vec.x/2 - pixel_size)/2);
-        spawn_vec.y = (-1*screen_vec.y / 2) - pixel_size;
+        spawn_vec.y = (-1*screen_vec.y / 2) - pixel_size * 2;
 
 
         return spawn_vec;

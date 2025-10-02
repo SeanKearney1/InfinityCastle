@@ -1,14 +1,15 @@
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class InitGameManager : MonoBehaviour
 {
-    public GameObject MuzanPrefab;
     void Start()
     {
-        if(GameObject.Find("GameManager").IsUnityNull())
+        if (GameObject.Find("GameManager").IsUnityNull())
         {
-            Instantiate(MuzanPrefab);
+            GameObject Muzan = new GameObject("GameManager");
+            Muzan.AddComponent<Muzan>();
         }
     }
 }

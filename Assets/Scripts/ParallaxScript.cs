@@ -5,7 +5,6 @@ public class ParallaxScript : MonoBehaviour
     public float ParallaxSpeed;
     private float GameTime = 0.0F;
     public float ParallaxOffset;
-
     public int AdditionalPanels;
     public Vector2 ParallaxDirection;
     private Vector2 pixel_size = new Vector2(0, 0);

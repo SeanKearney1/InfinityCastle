@@ -1,10 +1,10 @@
 //using NUnit.Framework.Constraints;
 //using Unity.VisualScripting;
 //using UnityEditor.UI;
-using System.Linq;
+//using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
-using static Unity.VisualScripting.Dependencies.Sqlite.SQLite3;
+//using static Unity.VisualScripting.Dependencies.Sqlite.SQLite3;
 //using UnityEngine.SceneManagement;
 //using UnityEngine.Timeline;
 
@@ -110,7 +110,7 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Demon") && !GetComponentInChildren<PlayerAttackScript>().getIsAttacking())
+        if (collision.CompareTag("Demon") && !GetComponentInChildren<PlayerAttackScript>().getIsAttacking() && !IsPlayerDashing())
         {
             Destroy(this.gameObject);
         }

@@ -42,11 +42,13 @@ public class PlayerAttackScript : MonoBehaviour
             {
                 Attacking_time_stamp = GameTime;
                 Attack_cooldown_time_stamp = GameTime;
+                AttackLogic();
             }
             else if (PlayerIndex == 1 && Input.GetKeyDown(KeyCode.RightShift))
             {
                 Attacking_time_stamp = GameTime;
                 Attack_cooldown_time_stamp = GameTime;
+                AttackLogic();
             }
         }
         if (Attacking_time_stamp + AttackDuration >= GameTime)
@@ -68,21 +70,8 @@ public class PlayerAttackScript : MonoBehaviour
     }
 
 
-    //    This overly complicated mess is due to me not wanting to use "OnTriggerStay2D",
-    //which would be running every frame, so instead it keeps track of all objects within
-    //it's trigger, then acts on them when needed. the attack logic for dashing was rooted
-    //through here because I wasn't copy-pasting all this.
-    //
-    //    So yeah if a demon was already within the player's kill aura, it wouldn't be picked up,
-    //resulting in close calls and quick reaction times of players being punished for already
-    //being too close. Future increasing of the players attack radius would only worsen this
-    //problem, ironically making it more difficult to play.
-    public void OnTriggerEnter2D(Collider2D collision)
+    private void AttackLogic()
     {
-        
-        ObjectsInKillAura = AddObjectToArray(ObjectsInKillAura, collision.gameObject); // Adds newest collision.
-        if (!IsAttacking && !GetComponentInParent<PlayerScript>().IsPlayerDashing()) { return; } // Continue if player is dashing or attacking.
-
         int attack_dash_index = 5;
         if (!IsAttacking) { attack_dash_index = 6; }
 
@@ -104,6 +93,38 @@ public class PlayerAttackScript : MonoBehaviour
                     Muzan.GetComponent<Muzan>().AddPlayerCurrentRunStat(PlayerIndex, attack_dash_index);
 
                 }
+            }
+        }
+    }
+
+
+
+    //    This overly complicated mess is due to me not wanting to use "OnTriggerStay2D",
+    //which would be running every frame, so instead it keeps track of all objects within
+    //it's trigger, then acts on them when needed. the attack logic for dashing was rooted
+    //through here because I wasn't copy-pasting all this.
+    //
+    //    So yeah if a demon was already within the player's kill aura, it wouldn't be picked up,
+    //resulting in close calls and quick reaction times of players being punished for already
+    //being too close. Future increasing of the players attack radius would only worsen this
+    //problem, ironically making it more difficult to play.
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        ObjectsInKillAura = AddObjectToArray(ObjectsInKillAura, collision.gameObject); // Adds newest collision.
+
+        if (IsAttacking || GetComponentInParent<PlayerScript>().IsPlayerDashing())
+        {
+            AttackLogic();
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        for (int i = 0; i < ObjectsInKillAura.Length; i++)
+        {
+            if (collision.gameObject == ObjectsInKillAura[i])
+            {
+                ObjectsInKillAura = RemoveFromArray(ObjectsInKillAura, i);
             }
         }
     }

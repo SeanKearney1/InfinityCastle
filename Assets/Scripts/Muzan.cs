@@ -108,6 +108,12 @@ public class Muzan : MonoBehaviour
     {
         InGame = true;
     }
+
+    public void LeaveTheCastle()
+    {
+        InGame = false;
+        NewRun(); // clears current run stats
+    }
     private void TimerScore()
     {
         GameTime += Time.deltaTime;
@@ -124,7 +130,7 @@ public class Muzan : MonoBehaviour
                 AddPlayerCurrentRunStat(1, 0);
             }
         }
-        
+
     }
 
     public void NewRun()
@@ -220,8 +226,8 @@ public class Muzan : MonoBehaviour
         String final_str = "";
         if (player == 0)
         {
-            final_str += CurrentRunPlayer1Stats[0]/10;
-            for (int i = 0; i < CurrentRunPlayer1Stats.Length; i++)
+            final_str += CurrentRunPlayer1Stats[0] / 10 + "\n";
+            for (int i = 1; i < CurrentRunPlayer1Stats.Length; i++)
             {
                 final_str += CurrentRunPlayer1Stats[i];
                 if (i + 1 < CurrentRunPlayer1Stats.Length)
@@ -233,8 +239,8 @@ public class Muzan : MonoBehaviour
         }
         else
         {
-            final_str += CurrentRunPlayer2Stats[0] / 10;
-            for (int i = 0; i < CurrentRunPlayer2Stats.Length; i++)
+            final_str += CurrentRunPlayer2Stats[0] / 10 + "\n";
+            for (int i = 1; i < CurrentRunPlayer2Stats.Length; i++)
             {
                 final_str += CurrentRunPlayer2Stats[i];
                 if (i + 1 < CurrentRunPlayer2Stats.Length)
@@ -315,7 +321,7 @@ public class Muzan : MonoBehaviour
         {
             str += CurrentRunPlayer1Stats[i] + " ";
         }
-        Debug.Log(str);
+        //Debug.Log(str);
     }
 
 }

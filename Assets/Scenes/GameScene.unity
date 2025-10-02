@@ -776,7 +776,7 @@ MonoBehaviour:
   PillarPrefab: {fileID: 3819950860732373758, guid: 8acb338833c262d44bec4d8cb0ebb5ef, type: 3}
   PillarWarningPrefab: {fileID: 3819950860732373758, guid: 0989efbc485fdc449b2fd886f44bc061, type: 3}
   NoSpawn: {fileID: 1162908253}
-  WarnTime: 4
+  WarnTime: 0.75
 --- !u!1001 &485246279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1567,7 +1567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 560, y: 320}
+  m_AnchoredPosition: {x: 500, y: 320}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1406054389
@@ -1612,8 +1612,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281610686
-  m_fontColor: {r: 0.745283, g: 0.19335175, b: 0.203944, a: 1}
+    rgba: 4282465791
+  m_fontColor: {r: 1, g: 0.23921569, b: 0.25490198, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1729,7 +1729,7 @@ MonoBehaviour:
   BuildingPrefab: {fileID: 332253626462969476, guid: fa23b930d9d2bd24d8dc414bb2ec10f0, type: 3}
   BuildingWarningPrefab: {fileID: 3819950860732373758, guid: 7453391436279c24288f7c8fa80069ab, type: 3}
   NoSpawn: {fileID: 1162908253}
-  WarnTime: 4
+  WarnTime: 0.5
 --- !u!1 &1559816654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,7 +1901,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -560, y: 260}
+  m_AnchoredPosition: {x: -500, y: 260}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1607613051
@@ -2739,7 +2739,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -560, y: 320}
+  m_AnchoredPosition: {x: -500, y: 320}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2105885156
@@ -2889,7 +2889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 560, y: 260}
+  m_AnchoredPosition: {x: 500, y: 260}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118952525
@@ -2936,8 +2936,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281676478
-  m_fontColor: {r: 0.74509805, g: 0.19607845, b: 0.20784315, a: 1}
+    rgba: 4282465791
+  m_fontColor: {r: 1, g: 0.23921569, b: 0.25490198, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
