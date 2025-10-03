@@ -2,16 +2,25 @@ using UnityEngine;
 using Unity.VisualScripting;
 public class BuildingLogicScript : MonoBehaviour
 {
-    public int MoveSpeed;
+    private float MoveSpeed;
     private float WarnTime;
     public int ExpireTime;
     private float time_stamp;
     private Rigidbody2D rb;
     private GameObject[] ParentedObjects = { };
+    private GameObject Muzan;
+    private GameObject Nakime;
     void Start()
     {
         time_stamp = Time.time;
         rb = GetComponent<Rigidbody2D>();
+        Muzan = GameObject.Find("GameManager");
+        Nakime = GameObject.Find("Spawners");
+
+        if (!Muzan.IsUnityNull())
+        {
+            MoveSpeed = Muzan.GetComponent<Muzan>().customGameSettings.getBuildingSpeed();
+        }
     }
 
     // Update is called once per frame
@@ -23,6 +32,7 @@ public class BuildingLogicScript : MonoBehaviour
         }
         if (time_stamp + WarnTime + ExpireTime < Time.time)
         {
+            Nakime.GetComponent<Nakime>().KilledBuilding();
             Destroy(this.gameObject);
         }
     }
@@ -42,7 +52,15 @@ public class BuildingLogicScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.transform.SetParent(this.gameObject.transform);
+            Vector3 player_pos = collision.gameObject.transform.position;
+            Vector3 building_pos = gameObject.transform.position;
+            Vector2 building_size = gameObject.GetComponent<BoxCollider2D>().size;
+
+            if (player_pos.y > building_pos.y+building_size.y) {
+                collision.gameObject.layer = 7;
+                Debug.Log("Grabbed Player   "+collision.gameObject.layer);
+                ParentedObjects = AddObjectToArray(ParentedObjects, collision.gameObject);
+            }
         }
     }
 
@@ -50,7 +68,7 @@ public class BuildingLogicScript : MonoBehaviour
 
 
 
-        private void MoveChildren()
+    private void MoveChildren()
     {
         for (int i = 0; i < ParentedObjects.Length; i++)
         {
@@ -61,7 +79,7 @@ public class BuildingLogicScript : MonoBehaviour
             }
             else
             {
-                ParentedObjects[i].GetComponent<Rigidbody2D>().linearVelocityX = MoveSpeed;
+                ParentedObjects[i].GetComponent<Rigidbody2D>().linearVelocityY = MoveSpeed;
             }
         }
     }

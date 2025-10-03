@@ -15,12 +15,6 @@ public class PillarSpawnerScript : MonoBehaviour
         pixel_size = PillarPrefab.GetComponent<SpriteRenderer>().size.y;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void SpawnPillar()
     {
         GameObject NewPillar = Instantiate(PillarPrefab);
@@ -35,11 +29,10 @@ public class PillarSpawnerScript : MonoBehaviour
         NewPillar.GetComponent<BoxCollider2D>().size = pillar_size;
 
         NewPillar.transform.position = GetPillarSpawn(NewPillar, pillar_size);
-        NewPillarWarning.transform.position = new Vector2(0,NewPillar.transform.position.y);
+        NewPillarWarning.transform.position = new Vector2(0, NewPillar.transform.position.y);
 
         NewPillar.GetComponent<PillarLogicScript>().SetWarnTime(WarnTime);
         NewPillarWarning.GetComponent<WarningKillMe>().KillTime(WarnTime);
-
 
     }
 

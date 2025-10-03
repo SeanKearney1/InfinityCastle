@@ -15,7 +15,10 @@ public class PlayerAttackScript : MonoBehaviour
 
     private GameObject[] ObjectsInKillAura = { };
     private GameObject Muzan;
+    private GameObject Nakime;
     private double GameTime = 0;
+
+    private bool CanAttackSword;
 
     private int PlayerIndex;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,6 +26,12 @@ public class PlayerAttackScript : MonoBehaviour
     {
         PlayerIndex = this.GetComponentInParent<PlayerScript>().PlayerIndex;
         Muzan = GameObject.Find("GameManager");
+        Nakime = GameObject.Find("Spawners");
+
+        if (!Muzan.IsUnityNull())
+        {
+            CanAttackSword = Muzan.GetComponent<Muzan>().customGameSettings.getCanAttackSword();
+        }
     }
 
     // Update is called once per frame
@@ -31,7 +40,7 @@ public class PlayerAttackScript : MonoBehaviour
 
         GameTime += Time.deltaTime;
 
-        Attack();
+        if (CanAttackSword) { Attack(); }
     }
 
     private void Attack()
@@ -86,6 +95,7 @@ public class PlayerAttackScript : MonoBehaviour
             {
                 if (ObjectsInKillAura[i].CompareTag("Demon"))
                 {
+                    Nakime.GetComponent<Nakime>().KilledDemon();
                     Destroy(ObjectsInKillAura[i]);
                     ObjectsInKillAura = RemoveFromArray(ObjectsInKillAura, i);
                     i--;

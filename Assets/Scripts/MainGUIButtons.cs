@@ -10,6 +10,8 @@ public class MainGUIButtons : MonoBehaviour
     public GameObject GameOverMainPanel;
     public GameObject HighscorePanel;
     public GameObject StatsPanel;
+    public GameObject GameModePanel;
+    public GameObject CustomModePanel;
     public GameObject PauseDarkness;
     public GameObject Player1HighScoreText;
     public GameObject Player2HighScoreText;
@@ -33,6 +35,8 @@ public class MainGUIButtons : MonoBehaviour
         HighscorePanel.SetActive(false);
         StatsPanel.SetActive(false);
         PauseDarkness.SetActive(false);
+        GameModePanel.SetActive(false);
+        CustomModePanel.SetActive(false);
         if (GameScene == 0)
         {
             MainMenuMainPanel.SetActive(true);
@@ -136,6 +140,47 @@ public class MainGUIButtons : MonoBehaviour
             PauseDarkness.SetActive(false);
         }
         StatsPanel.SetActive(false);
+        GameModePanel.SetActive(false);
+        CustomModePanel.SetActive(false);
+    }
+
+    public void GameModesPage()
+    {
+        GameModePanel.SetActive(true);
+        CustomModePanel.SetActive(false);
+        MainMenuMainPanel.SetActive(false);
+        InGameMainPanel.SetActive(false);
+        GameOverMainPanel.SetActive(false);
+        PauseDarkness.SetActive(true);
+    }
+
+    public void CustomModePage()
+    {
+        GameModePanel.SetActive(false);
+        CustomModePanel.SetActive(true);
+        MainMenuMainPanel.SetActive(false);
+        InGameMainPanel.SetActive(false);
+        GameOverMainPanel.SetActive(false);
+
+        gameObject.GetComponentInChildren<CustomModeHandlerScript>().FillCustomData();
+    }
+
+    public void BackToGameMode()
+    {
+        gameObject.GetComponentInChildren<CustomModeHandlerScript>().HarvestCustomData();
+        GameModesPage();
+    }
+
+    public void StartPresetGameMode(int index)
+    {
+        if (index == -1) // custom game mode.
+        {
+            gameObject.GetComponentInChildren<CustomModeHandlerScript>().HarvestCustomData();
+        }
+
+
+        Play();
+
     }
 
     public void Stats()

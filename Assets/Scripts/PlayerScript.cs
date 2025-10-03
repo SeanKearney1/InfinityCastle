@@ -23,18 +23,23 @@ public class PlayerScript : MonoBehaviour
     private double DashCooldown_time_stamp = 0.0;
     private Rigidbody2D rb;
     private double GameTime = 0.0;
+    private bool CanAttackDash;
 
     private GameObject Muzan;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         Muzan = GameObject.Find("GameManager");
+        if (!Muzan.IsUnityNull())
+        {
+            CanAttackDash = Muzan.GetComponent<Muzan>().customGameSettings.getCanAttackDash();
+        }
     }
 
     void Update()
     {
         GameTime += Time.deltaTime;
-        Dash();
+        if (CanAttackDash) { Dash(); }
         Move();
     }
 
@@ -113,6 +118,7 @@ public class PlayerScript : MonoBehaviour
         if (collision.CompareTag("Demon") && !GetComponentInChildren<PlayerAttackScript>().getIsAttacking() && !IsPlayerDashing())
         {
             Destroy(this.gameObject);
+            Debug.Log("Killed By Demon");
         }
     }
 
@@ -121,6 +127,7 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("ScreenSpace"))
         {
             Destroy(this.gameObject);
+            Debug.Log("Killed By Out of Bounds");
         }
 
     }

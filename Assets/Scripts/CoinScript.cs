@@ -1,25 +1,30 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CoinScript : MonoBehaviour
 {
-    public int MoveSpeed;
+    private float MoveSpeed;
     private Rigidbody2D rb;
+    public GameObject CoinSpawnerScript;
 
+    private bool ThatHeavyIsDead = false;
     private GameObject Muzan;
     public int CoinType; // 0: basic coin, 1: rare coin, 2: dash coin
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocityY = MoveSpeed;
         Muzan = GameObject.Find("GameManager");
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (!Muzan.IsUnityNull())
+        {
+            if (CoinType == 1) { MoveSpeed = Muzan.GetComponent<Muzan>().customGameSettings.getYellowCoinSpeed(); }
+            else if (CoinType == 2) { MoveSpeed = Muzan.GetComponent<Muzan>().customGameSettings.getRareCoinSpeed(); }
+            else if (CoinType == 3) { MoveSpeed = Muzan.GetComponent<Muzan>().customGameSettings.getDashCoinSpeed(); }
+        }
+        Debug.Log("BRAND NEW COIN!!!!!!!!!!!!!!!!!!!! SPEED == " + MoveSpeed);
+        rb.linearVelocityY = MoveSpeed;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -43,7 +48,7 @@ public class CoinScript : MonoBehaviour
                 Muzan.GetComponent<Muzan>().AddPlayerCurrentRunStat(1, CoinType);
                 Muzan.GetComponent<Muzan>().Giyu.GetComponent<PlayerScript>().AddDashesPlayer(new_dashes);
             }
-            Destroy(this.gameObject);
+            CoinKilled();
         }
     }
 
@@ -51,7 +56,17 @@ public class CoinScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ScreenSpace"))
         {
+            CoinKilled();
+        }
+    }
+
+    private void CoinKilled()
+    {
+        if (!ThatHeavyIsDead)
+        {
+            CoinSpawnerScript.GetComponent<CoinSpawnerScript>().KilledCoin(CoinType);
             Destroy(this.gameObject);
         }
+        ThatHeavyIsDead = true;    
     }
 }

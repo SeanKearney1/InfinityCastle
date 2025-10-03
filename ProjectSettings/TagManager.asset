@@ -16,9 +16,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Walls
+  - Ghost
+  - Player
   - 
   - 
   - 
@@ -58,9 +58,6 @@ TagManager:
   - name: BackGround1
     uniqueID: 3828163689
     locked: 0
-  - name: Demon
-    uniqueID: 2954983873
-    locked: 0
   - name: Coins
     uniqueID: 2128259821
     locked: 0
@@ -78,6 +75,9 @@ TagManager:
     locked: 0
   - name: Buildings
     uniqueID: 3021969581
+    locked: 0
+  - name: Demon
+    uniqueID: 2954983873
     locked: 0
   m_RenderingLayers:
   - Default

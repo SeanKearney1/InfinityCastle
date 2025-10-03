@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4124362528326031756}
   - component: {fileID: 3591012119632983728}
   - component: {fileID: 8275009070554270023}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 1482879548626368563}
   - component: {fileID: 5819251438850021492}
   - component: {fileID: 2907499079595397163}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerKillAura
   m_TagString: PlayerKill
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1192343961936474659}
   - component: {fileID: 4990361507124599727}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

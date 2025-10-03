@@ -9,6 +9,9 @@ using UnityEngine.UIElements;
 
 public class Muzan : MonoBehaviour
 {
+
+    public CustomGameSettings customGameSettings = new CustomGameSettings();
+
     private double GameTime;
 
     private int ScoreIndex = 8;
@@ -57,6 +60,37 @@ public class Muzan : MonoBehaviour
         1: Basic Coin = 100 points
         2: Killing a demon = 200 points
         3: Special Coin = 1,000 points
+
+
+
+
+        CUSTOM GAME MODE SETTINGS
+
+        ********************************************************
+        +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        ********************************************************
+
+        Coin:
+            Spawn Rate
+            Coin Weights
+            Movement Speeds
+
+        Obstacles:
+            Obstacle Weights
+            Movement Speeds
+
+        Misc:
+            Coin Spawn Rate
+            Obstacle Spawn Rate
+            Both players must be alive
+            Allow Sword Attacks
+            Allow Dash Attacks
+
+        ********************************************************
+        +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        ********************************************************
+
+
     */
 
 
@@ -141,7 +175,7 @@ public class Muzan : MonoBehaviour
 
     private void PlayersAlive()
     {
-        if (Tanjiro.IsUnityNull() && Giyu.IsUnityNull())
+        if (Tanjiro.IsUnityNull() && Giyu.IsUnityNull() || (customGameSettings.getIsOneLife() && (Tanjiro.IsUnityNull() || Giyu.IsUnityNull())))
         {
             addNewHighScorePlayer(0, CurrentRunPlayer1Stats[ScoreIndex]);
             addNewHighScorePlayer(1, CurrentRunPlayer2Stats[ScoreIndex]);
@@ -174,9 +208,12 @@ public class Muzan : MonoBehaviour
     {
         if (player == 0)
         {
-            CurrentRunPlayer1Stats[index] ++;
+            CurrentRunPlayer1Stats[index]++;
         }
-        CurrentRunPlayer2Stats[index] ++;
+        else
+        {
+            CurrentRunPlayer2Stats[index] ++;
+        }
     }
     public float[] getPlayerTotalStat(int player, int index)
     {

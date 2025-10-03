@@ -670,10 +670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a7a4421ea7fc74db00af26bcbb2750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  AttackCooldown: 0.5
-  DemonCooldown: 2
-  PillarCooldown: 5
-  BuildingCooldown: 3
   DemonSpawner: {fileID: 1582736350}
   PillarSpawner: {fileID: 433220537}
   BuildingSpawner: {fileID: 1429928390}
@@ -776,7 +772,7 @@ MonoBehaviour:
   PillarPrefab: {fileID: 3819950860732373758, guid: 8acb338833c262d44bec4d8cb0ebb5ef, type: 3}
   PillarWarningPrefab: {fileID: 3819950860732373758, guid: 0989efbc485fdc449b2fd886f44bc061, type: 3}
   NoSpawn: {fileID: 1162908253}
-  WarnTime: 0.75
+  WarnTime: 1
 --- !u!1001 &485246279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1012,6 +1008,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InvisibleWall_r
       objectReference: {fileID: 0}
+    - target: {fileID: 6849145191287877513, guid: ac3ee720a706d8046a504ccbd6b6f671, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1121,7 +1121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1000948018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InvisibleWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1358,6 +1358,10 @@ PrefabInstance:
     - target: {fileID: 6849145191287877513, guid: ac3ee720a706d8046a504ccbd6b6f671, type: 3}
       propertyPath: m_Name
       value: InvisibleWall_d
+      objectReference: {fileID: 0}
+    - target: {fileID: 6849145191287877513, guid: ac3ee720a706d8046a504ccbd6b6f671, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1729,7 +1733,7 @@ MonoBehaviour:
   BuildingPrefab: {fileID: 332253626462969476, guid: fa23b930d9d2bd24d8dc414bb2ec10f0, type: 3}
   BuildingWarningPrefab: {fileID: 3819950860732373758, guid: 7453391436279c24288f7c8fa80069ab, type: 3}
   NoSpawn: {fileID: 1162908253}
-  WarnTime: 0.5
+  WarnTime: 1
 --- !u!1 &1559816654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,7 +2173,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2603,6 +2607,10 @@ PrefabInstance:
     - target: {fileID: 6849145191287877513, guid: ac3ee720a706d8046a504ccbd6b6f671, type: 3}
       propertyPath: m_Name
       value: InvisibleWall_u
+      objectReference: {fileID: 0}
+    - target: {fileID: 6849145191287877513, guid: ac3ee720a706d8046a504ccbd6b6f671, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3176,6 +3184,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InvisibleWall_l
       objectReference: {fileID: 0}
+    - target: {fileID: 6849145191287877513, guid: ac3ee720a706d8046a504ccbd6b6f671, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3248,10 +3260,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1633632786}
+  - {fileID: 293679035}
   - {fileID: 6089918233440053474}
   - {fileID: 1934898495}
   - {fileID: 1000948018}
-  - {fileID: 293679035}
   - {fileID: 195377311}
   - {fileID: 1373438539}
   - {fileID: 1087527020}

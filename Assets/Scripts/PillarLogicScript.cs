@@ -6,7 +6,7 @@ using UnityEngine;
 public class PillarLogicScript : MonoBehaviour
 {
 
-    public int MoveSpeed;
+    private float MoveSpeed;
     private bool direction;
 
     private float WarnTime;
@@ -19,10 +19,20 @@ public class PillarLogicScript : MonoBehaviour
 
     private GameObject[] ParentedObjects = { };
 
+    private GameObject Muzan;
+    private GameObject Nakime;
+
     void Start()
     {
         time_stamp = Time.time;
         rb = GetComponent<Rigidbody2D>();
+        Muzan = GameObject.Find("GameManager");
+        Nakime = GameObject.Find("Spawners");
+
+        if (!Muzan.IsUnityNull())
+        {
+            MoveSpeed = Muzan.GetComponent<Muzan>().customGameSettings.getPillarSpeed();
+        }
     }
 
     // Update is called once per frame
@@ -34,6 +44,7 @@ public class PillarLogicScript : MonoBehaviour
         }
         if (time_stamp + WarnTime + ExpireTime < Time.time)
         {
+            Nakime.GetComponent<Nakime>().KilledPillar();
             Destroy(this.gameObject);
         }
     }
@@ -65,12 +76,15 @@ public class PillarLogicScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //Vector3 player_pos = collision.gameObject.transform.position;
-            //Vector3 pillar_pos = gameObject.transform.position;
-            //Debug.Log("PLAYER!!");
-            //if (player_pos.x > pillar_pos.x && player_pos.x < pillar_pos.x) {
+            Vector3 player_pos = collision.gameObject.transform.position;
+            Vector3 pillar_pos = gameObject.transform.position;
+            Vector2 pillar_size = gameObject.GetComponent<BoxCollider2D>().size;
+
+            if (!(player_pos.x > pillar_pos.x-pillar_size.x || player_pos.x < pillar_pos.x+pillar_size.x)) {
+                collision.gameObject.layer = 7;
+                Debug.Log("Grabbed Player   "+collision.gameObject.layer);
                 ParentedObjects = AddObjectToArray(ParentedObjects, collision.gameObject);
-            //}
+            }
         }
     }
     

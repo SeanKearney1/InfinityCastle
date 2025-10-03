@@ -1,4 +1,6 @@
 using System;
+using Unity.VisualScripting;
+
 //using UnityEditor.Callbacks;
 //using UnityEditor.UI;
 using UnityEngine;
@@ -7,15 +9,24 @@ public class DemonLogicScript : MonoBehaviour
 {
     private GameObject Tanjiro;
     private GameObject Giyu;
-    public float DemonSpeed;
+    private float DemonSpeed;
     private Rigidbody2D rb;
+    private GameObject Muzan;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         DemonSpeed *= UnityEngine.Random.Range(0.8f, 1.2f);
-        Tanjiro = GameObject.Find("GameManager").GetComponent<Muzan>().Tanjiro;
-        Giyu = GameObject.Find("GameManager").GetComponent<Muzan>().Giyu;
+
+        Muzan = GameObject.Find("GameManager");
+
+        if (!Muzan.IsUnityNull())
+        {
+            Tanjiro = Muzan.GetComponent<Muzan>().Tanjiro;
+            Giyu = Muzan.GetComponent<Muzan>().Giyu;
+            DemonSpeed = Muzan.GetComponent<Muzan>().customGameSettings.getDemonSpeed();
+        }
     }
 
     // Update is called once per frame

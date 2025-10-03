@@ -8,7 +8,7 @@ public class BuildingSpawnerScript : MonoBehaviour
     public GameObject NoSpawn;
     public float WarnTime;
 
-    private float pixel_size;
+    private Vector2 pixel_size;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +18,7 @@ public class BuildingSpawnerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pixel_size = BuildingPrefab.GetComponent<SpriteRenderer>().size.y;
+        pixel_size = BuildingPrefab.GetComponent<SpriteRenderer>().size;
     }
 
     public void SpawnBuilding()
@@ -27,7 +27,7 @@ public class BuildingSpawnerScript : MonoBehaviour
         GameObject NewBuilding = Instantiate(BuildingPrefab);
         GameObject NewBuildingWarning = Instantiate(BuildingWarningPrefab);
 
-        NewBuildingWarning.GetComponent<SpriteRenderer>().size = new Vector2(pixel_size,pixel_size*12);
+        NewBuildingWarning.GetComponent<SpriteRenderer>().size = new Vector2(pixel_size.x,pixel_size.y*12);
 
         NewBuilding.transform.position = GetBuildingSpawn();
 
@@ -44,8 +44,8 @@ public class BuildingSpawnerScript : MonoBehaviour
         Vector2 spawn_vec = new Vector2(0, 0);
         Vector2 screen_vec = NoSpawn.GetComponent<BoxCollider2D>().size;
 
-        spawn_vec.x = Random.Range((-1 * screen_vec.x + pixel_size)/2, (screen_vec.x/2 - pixel_size)/2);
-        spawn_vec.y = (-1*screen_vec.y / 2) - pixel_size * 2;
+        spawn_vec.x = Random.Range((-1 * screen_vec.x + pixel_size.x)/2, (screen_vec.x/2 - pixel_size.x)/2);
+        spawn_vec.y = (-1*screen_vec.y / 2) - pixel_size.y * 2;
 
 
         return spawn_vec;
