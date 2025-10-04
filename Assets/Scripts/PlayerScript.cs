@@ -63,6 +63,17 @@ public class PlayerScript : MonoBehaviour
             if (Input.GetKey(KeyCode.DownArrow)) { vertical_input--; }
         }
         rb.linearVelocity = new Vector2(DashMultiplier * 10 * horizontal_input, DashMultiplier * 10 * vertical_input);
+
+        if (DashMultiplier == DashMultiplierMax) 
+        {
+            gameObject.GetComponentInChildren<Animator>().SetBool("IsDashing", true);
+            DashingAngle(horizontal_input,vertical_input);
+        }
+        else
+        {
+            gameObject.GetComponentInChildren<Animator>().SetBool("IsDashing", false);
+            gameObject.GetComponentInChildren<SpriteRenderer>().transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 
     public void AddDashesPlayer(int dashes)
@@ -107,10 +118,50 @@ public class PlayerScript : MonoBehaviour
 
     public bool IsPlayerDashing()
     {
-        if (DashMultiplier != 1) {
+        if (DashMultiplier != 1)
+        {
             return true;
         }
         return false;
+    }
+
+    private void DashingAngle(float horizontal_input, float vertical_input)
+    {
+        Quaternion angles = Quaternion.Euler(0, 0, 0);
+        if ((horizontal_input == 0 && vertical_input == 0) || (horizontal_input == 0 && vertical_input == 1)) // up or nothing
+        {
+            angles = Quaternion.Euler(0, 0, 0);
+        }
+        else if (horizontal_input == -1 && vertical_input == 1) // up right
+        {
+            angles = Quaternion.Euler(0, 0, 45);
+        }
+        else if (horizontal_input == -1 && vertical_input == 0) // right
+        {
+            angles = Quaternion.Euler(0, 0, 90);
+        }
+        else if (horizontal_input == -1 && vertical_input == -1) // down right
+        {
+            angles = Quaternion.Euler(0, 0, 135);
+        }
+        else if (horizontal_input == 0 && vertical_input == -1) // down
+        {
+            angles = Quaternion.Euler(0, 0, 180);
+        }
+        else if (horizontal_input == 1 && vertical_input == -1) // down left
+        {
+            angles = Quaternion.Euler(0, 0, 225);
+        }
+        else if (horizontal_input == 1 && vertical_input == 0) // left
+        {
+            angles = Quaternion.Euler(0, 0, 270);
+        }
+        else if (horizontal_input == 1 && vertical_input == 1) // up left
+        {
+            angles = Quaternion.Euler(0, 0, 315);
+        }
+        gameObject.GetComponentInChildren<SpriteRenderer>().transform.rotation = angles;
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -135,5 +186,11 @@ public class PlayerScript : MonoBehaviour
     public int getDashCount()
     {
         return DashCount;
+    }
+
+
+    public void AnimateAttacker(bool attacking)
+    {
+        gameObject.GetComponentInChildren<Animator>().SetBool("IsAttacking",attacking);
     }
 }

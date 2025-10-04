@@ -37,6 +37,7 @@ public class CustomGameSettings
     private bool CanAttackSword;
     private bool CanAttackDash;
     private bool Singleplayer;
+    private bool FriendlyFire;
 
     private float[] default_floats = {
         25.0f,          // PillarWeight
@@ -67,7 +68,8 @@ public class CustomGameSettings
         false,      // Players share life
         true,       // Can use sword
         true,       // Can use dash
-        false       // Singleplayer
+        false,      // Singleplayer
+        false       // Friendly Fire
     };
 
 
@@ -109,6 +111,7 @@ public class CustomGameSettings
         CanAttackSword = default_bools[1];
         CanAttackDash = default_bools[2];
         Singleplayer = default_bools[3];
+        FriendlyFire = default_bools[4];
     }
     public CustomGameSettings(float[] float_settings, bool[] bool_settings)
     {
@@ -147,6 +150,7 @@ public class CustomGameSettings
         CanAttackSword = bool_settings[1];
         CanAttackDash = bool_settings[2];
         Singleplayer = bool_settings[3];
+        FriendlyFire = bool_settings[4];
     }
 
 
@@ -175,7 +179,7 @@ public class CustomGameSettings
     public bool getCanAttackSword() { return CanAttackSword; }
     public bool getCanAttackDash() { return CanAttackDash; }
     public bool getSinglePlayer() { return Singleplayer; }
-
+    public bool getFriendlyFire() { return FriendlyFire; }
 
 
     public float[] getFloatDefaults()

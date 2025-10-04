@@ -7,7 +7,7 @@ public class CustomModeHandlerScript : MonoBehaviour
 {
 
     private int float_settings_max = 22;
-    private int bool_settings_max = 4;
+    private int bool_settings_max = 5;
 
     public GameObject[] CustomOptions;
     private GameObject Muzan;
@@ -46,8 +46,9 @@ public class CustomModeHandlerScript : MonoBehaviour
         CustomOptions[23].GetComponent<Toggle>().isOn = Muzan.GetComponent<Muzan>().customGameSettings.getCanAttackSword();
         CustomOptions[24].GetComponent<Toggle>().isOn = Muzan.GetComponent<Muzan>().customGameSettings.getCanAttackDash();
         CustomOptions[25].GetComponent<Toggle>().isOn = Muzan.GetComponent<Muzan>().customGameSettings.getSinglePlayer();
+        CustomOptions[26].GetComponent<Toggle>().isOn = Muzan.GetComponent<Muzan>().customGameSettings.getFriendlyFire();
 
-    
+
     }
 
 
@@ -63,7 +64,7 @@ public class CustomModeHandlerScript : MonoBehaviour
 
         for (int i = 0; i < float_settings_max; i++)
         {
-            Debug.Log(CustomOptions[i]+ " " + i);
+            Debug.Log(CustomOptions[i] + " " + i);
             if (CustomOptions[i].GetComponent<TMP_InputField>().text != "")
             {
                 float_settings[i] = float.Parse(CustomOptions[i].GetComponent<TMP_InputField>().text);
@@ -80,6 +81,7 @@ public class CustomModeHandlerScript : MonoBehaviour
         Muzan.GetComponent<Muzan>().customGameSettings = new CustomGameSettings(float_settings, bool_settings);
 
     }
+    
 
 
 }

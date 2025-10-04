@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
+using Unity.Mathematics;
 
 public class MainGUIButtons : MonoBehaviour
 {
@@ -23,9 +24,113 @@ public class MainGUIButtons : MonoBehaviour
     public GameObject Player2TotalStats;
 
     private GameObject Muzan;
-
     private bool gamePaused = false;
     public int GameScene;
+
+
+
+    private float[][] float_preset_gamemodes = {
+
+        new float[]{ // Coin Race
+            25.0f,          // PillarWeight
+            75.0f,          // PillarSpeed
+            55.0f,          // BuildingWeight
+            25.0f,          // BuildingSpeed
+            20.0f,          // DemonWeight
+            1.0f,           // DemonSpeed
+            50.0f,          // YellowCoinWeight
+            50.0f,          // YellowCoinSpeed
+            10.0f,          // RareCoinWeight
+            35.0f,          // RareCoinSpeed
+            40.0f,          // DashCoinWeight
+            30.0f,          // DashCoinSpeed
+            1.0f,           // EnemySpawnRateMin
+            2.0f,           // EnemySpawnRateMax
+            0.0f,           // CoinSpawnRateMin
+            1.0f,           // CoinSpawnRateMax
+            20.0f,          // MaxPillars
+            20.0f,          // MaxBuildings
+            20.0f,          // MaxDemons
+            20.0f,          // MaxYellowCoins
+            20.0f,          // MaxRareCoins
+            20.0f,          // MaxDashCoins
+        },
+        new float[]{ // Alone
+            25.0f,          // PillarWeight
+            75.0f,          // PillarSpeed
+            55.0f,          // BuildingWeight
+            25.0f,          // BuildingSpeed
+            20.0f,          // DemonWeight
+            1.0f,           // DemonSpeed
+            50.0f,          // YellowCoinWeight
+            50.0f,          // YellowCoinSpeed
+            10.0f,          // RareCoinWeight
+            35.0f,          // RareCoinSpeed
+            40.0f,          // DashCoinWeight
+            30.0f,          // DashCoinSpeed
+            1.0f,           // EnemySpawnRateMin
+            2.0f,           // EnemySpawnRateMax
+            0.0f,           // CoinSpawnRateMin
+            1.0f,           // CoinSpawnRateMax
+            20.0f,          // MaxPillars
+            20.0f,          // MaxBuildings
+            20.0f,          // MaxDemons
+            20.0f,          // MaxYellowCoins
+            20.0f,          // MaxRareCoins
+            20.0f,          // MaxDashCoins
+        },
+        new float[]{ // Demon Slayer
+            25.0f,          // PillarWeight
+            75.0f,          // PillarSpeed
+            55.0f,          // BuildingWeight
+            25.0f,          // BuildingSpeed
+            20.0f,          // DemonWeight
+            1.0f,           // DemonSpeed
+            50.0f,          // YellowCoinWeight
+            50.0f,          // YellowCoinSpeed
+            10.0f,          // RareCoinWeight
+            35.0f,          // RareCoinSpeed
+            40.0f,          // DashCoinWeight
+            30.0f,          // DashCoinSpeed
+            1.0f,           // EnemySpawnRateMin
+            2.0f,           // EnemySpawnRateMax
+            0.0f,           // CoinSpawnRateMin
+            1.0f,           // CoinSpawnRateMax
+            20.0f,          // MaxPillars
+            20.0f,          // MaxBuildings
+            20.0f,          // MaxDemons
+            20.0f,          // MaxYellowCoins
+            20.0f,          // MaxRareCoins
+            20.0f,          // MaxDashCoins
+        }
+
+    };
+
+    private bool[][] bool_preset_gamemodes = {
+        new bool[]{ // Coin Race
+            false,      // Players share life
+            true,       // Can use sword
+            true,       // Can use dash
+            false       // Singleplayer
+        },
+        new bool[]{  // Alone
+            false,      // Players share life
+            true,       // Can use sword
+            true,       // Can use dash
+            false       // Singleplayer
+        },
+        new bool[]{ // Demon Slayer
+            false,      // Players share life
+            true,       // Can use sword
+            true,       // Can use dash
+            false       // Singleplayer
+        }
+    };
+
+
+
+
+
     void Start()
     {
         Muzan = GameObject.Find("GameManager");
@@ -176,6 +281,10 @@ public class MainGUIButtons : MonoBehaviour
         if (index == -1) // custom game mode.
         {
             gameObject.GetComponentInChildren<CustomModeHandlerScript>().HarvestCustomData();
+        }
+        else
+        {
+            Muzan.GetComponent<Muzan>().customGameSettings = new CustomGameSettings(float_preset_gamemodes[index], bool_preset_gamemodes[index]);
         }
 
 

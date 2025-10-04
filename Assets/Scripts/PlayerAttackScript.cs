@@ -1,18 +1,15 @@
 //using UnityEditor.Toolbars;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttackScript : MonoBehaviour
 {
-    private double AttackDuration = 1.5;
-    private double AttackCooldown = 3.0;
+    private double AttackDuration = 0.25;
+    private double AttackCooldown = 1.0;
     private bool IsAttacking = false;
     private double Attacking_time_stamp = -9999999.0;
     private double Attack_cooldown_time_stamp = -9999999.0;
-
+    private bool FriendlyFire;
     private GameObject[] ObjectsInKillAura = { };
     private GameObject Muzan;
     private GameObject Nakime;
@@ -31,6 +28,7 @@ public class PlayerAttackScript : MonoBehaviour
         if (!Muzan.IsUnityNull())
         {
             CanAttackSword = Muzan.GetComponent<Muzan>().customGameSettings.getCanAttackSword();
+            FriendlyFire = Muzan.GetComponent<Muzan>().customGameSettings.getFriendlyFire();
         }
     }
 
@@ -63,12 +61,12 @@ public class PlayerAttackScript : MonoBehaviour
         if (Attacking_time_stamp + AttackDuration >= GameTime)
         {
             IsAttacking = true;
-            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
+            gameObject.GetComponentInParent<PlayerScript>().AnimateAttacker(IsAttacking);
         }
         else
         {
             IsAttacking = false;
-            this.gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 0);
+            gameObject.GetComponentInParent<PlayerScript>().AnimateAttacker(IsAttacking);
         } 
     }
 
@@ -93,15 +91,20 @@ public class PlayerAttackScript : MonoBehaviour
             }
             else
             {
-                if (ObjectsInKillAura[i].CompareTag("Demon"))
+                if (ObjectsInKillAura[i].CompareTag("Demon") || (ObjectsInKillAura[i].CompareTag("Player") && FriendlyFire))
                 {
-                    Nakime.GetComponent<Nakime>().KilledDemon();
-                    Destroy(ObjectsInKillAura[i]);
-                    ObjectsInKillAura = RemoveFromArray(ObjectsInKillAura, i);
-                    i--;
+                    if (ObjectsInKillAura[i].CompareTag("Demon") || (ObjectsInKillAura[i].GetComponent<PlayerScript>() && ObjectsInKillAura[i].GetComponent<PlayerScript>().PlayerIndex != PlayerIndex))
+                    {
 
-                    Muzan.GetComponent<Muzan>().AddPlayerCurrentRunStat(PlayerIndex, attack_dash_index);
-
+                        if (ObjectsInKillAura[i].CompareTag("Demon"))
+                        {
+                            Nakime.GetComponent<Nakime>().KilledDemon();
+                            Muzan.GetComponent<Muzan>().AddPlayerCurrentRunStat(PlayerIndex, attack_dash_index);
+                        }
+                        Destroy(ObjectsInKillAura[i]);
+                        ObjectsInKillAura = RemoveFromArray(ObjectsInKillAura, i);
+                        i--;
+                    }
                 }
             }
         }
