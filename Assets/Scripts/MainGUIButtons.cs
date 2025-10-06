@@ -32,28 +32,28 @@ public class MainGUIButtons : MonoBehaviour
     private float[][] float_preset_gamemodes = {
 
         new float[]{ // Coin Race
-            25.0f,          // PillarWeight
+            40.0f,          // PillarWeight
             75.0f,          // PillarSpeed
-            55.0f,          // BuildingWeight
-            25.0f,          // BuildingSpeed
-            20.0f,          // DemonWeight
-            1.0f,           // DemonSpeed
-            50.0f,          // YellowCoinWeight
-            50.0f,          // YellowCoinSpeed
+            60.0f,          // BuildingWeight
+            40.0f,          // BuildingSpeed
+            0.0f,           // DemonWeight
+            0.0f,           // DemonSpeed
+            90.0f,          // YellowCoinWeight
+            40.0f,          // YellowCoinSpeed
             10.0f,          // RareCoinWeight
-            35.0f,          // RareCoinSpeed
-            40.0f,          // DashCoinWeight
-            30.0f,          // DashCoinSpeed
-            1.0f,           // EnemySpawnRateMin
-            2.0f,           // EnemySpawnRateMax
+            30.0f,          // RareCoinSpeed
+            0.0f,           // DashCoinWeight
+            0.0f,           // DashCoinSpeed
+            0.5f,           // EnemySpawnRateMin
+            1.5f,           // EnemySpawnRateMax
             0.0f,           // CoinSpawnRateMin
-            1.0f,           // CoinSpawnRateMax
-            20.0f,          // MaxPillars
+            0.75f,          // CoinSpawnRateMax
+            3.0f,           // MaxPillars
             20.0f,          // MaxBuildings
-            20.0f,          // MaxDemons
+            0.0f,           // MaxDemons
             20.0f,          // MaxYellowCoins
             20.0f,          // MaxRareCoins
-            20.0f,          // MaxDashCoins
+            0.0f,           // MaxDashCoins
         },
         new float[]{ // Alone
             25.0f,          // PillarWeight
@@ -81,19 +81,19 @@ public class MainGUIButtons : MonoBehaviour
         },
         new float[]{ // Demon Slayer
             25.0f,          // PillarWeight
-            75.0f,          // PillarSpeed
-            55.0f,          // BuildingWeight
-            25.0f,          // BuildingSpeed
-            20.0f,          // DemonWeight
-            1.0f,           // DemonSpeed
-            50.0f,          // YellowCoinWeight
-            50.0f,          // YellowCoinSpeed
+            150.0f,         // PillarSpeed
+            25.0f,          // BuildingWeight
+            50.0f,          // BuildingSpeed
+            50.0f,          // DemonWeight
+            1.5f,           // DemonSpeed
+            70.0f,          // YellowCoinWeight
+            55.0f,          // YellowCoinSpeed
             10.0f,          // RareCoinWeight
-            35.0f,          // RareCoinSpeed
-            40.0f,          // DashCoinWeight
-            30.0f,          // DashCoinSpeed
-            1.0f,           // EnemySpawnRateMin
-            2.0f,           // EnemySpawnRateMax
+            40.0f,          // RareCoinSpeed
+            20.0f,          // DashCoinWeight
+            35.0f,          // DashCoinSpeed
+            0.75f,          // EnemySpawnRateMin
+            1.5f,           // EnemySpawnRateMax
             0.0f,           // CoinSpawnRateMin
             1.0f,           // CoinSpawnRateMax
             20.0f,          // MaxPillars
@@ -109,21 +109,24 @@ public class MainGUIButtons : MonoBehaviour
     private bool[][] bool_preset_gamemodes = {
         new bool[]{ // Coin Race
             false,      // Players share life
-            true,       // Can use sword
-            true,       // Can use dash
-            false       // Singleplayer
+            false,       // Can use sword
+            false,       // Can use dash
+            false,      // Singleplayer
+            false       // Friendly Fire
         },
         new bool[]{  // Alone
             false,      // Players share life
             true,       // Can use sword
             true,       // Can use dash
-            false       // Singleplayer
+            true,      // Singleplayer
+            false       // Friendly Fire
         },
         new bool[]{ // Demon Slayer
-            false,      // Players share life
+            true,      // Players share life
             true,       // Can use sword
             true,       // Can use dash
-            false       // Singleplayer
+            false,      // Singleplayer
+            true       // Friendly Fire
         }
     };
 
@@ -199,6 +202,13 @@ public class MainGUIButtons : MonoBehaviour
             }
         }
     }
+
+    public void MuzanArrives() // for when game manager isn't initialized yet on the title screen.
+    {
+        Muzan = GameObject.Find("GameManager");
+    }
+
+
 
     public void Exit()
     {
@@ -284,6 +294,7 @@ public class MainGUIButtons : MonoBehaviour
         }
         else
         {
+            Debug.Log(Muzan);
             Muzan.GetComponent<Muzan>().customGameSettings = new CustomGameSettings(float_preset_gamemodes[index], bool_preset_gamemodes[index]);
         }
 

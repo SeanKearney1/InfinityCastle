@@ -10,6 +10,12 @@ public class InitGameManager : MonoBehaviour
         {
             GameObject Muzan = new GameObject("GameManager");
             Muzan.AddComponent<Muzan>();
+            GameObject MainGUI = GameObject.Find("MainGUI");
+            if (!MainGUI.IsUnityNull())
+            {
+                MainGUI.GetComponent<MainGUIButtons>().MuzanArrives();
+            }
+            
         }
     }
 }
