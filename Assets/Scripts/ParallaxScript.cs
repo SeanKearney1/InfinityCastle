@@ -1,5 +1,13 @@
 using UnityEngine;
 
+
+/*
+    This script handles the parallax backgound for 
+    the title scene, game scene, and game over scene.
+ */
+
+
+
 public class ParallaxScript : MonoBehaviour
 {
     public float ParallaxSpeed;

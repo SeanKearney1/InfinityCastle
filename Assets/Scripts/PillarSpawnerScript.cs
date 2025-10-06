@@ -1,5 +1,10 @@
 using UnityEngine;
 
+
+/*
+    Handles the spawning logic for the pillars.
+    Spawns it at a random height with a random length just outside player view.
+ */
 public class PillarSpawnerScript : MonoBehaviour
 {
     public GameObject PillarPrefab;

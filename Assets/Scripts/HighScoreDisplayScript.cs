@@ -4,6 +4,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 //using UnityEngine.SocialPlatforms.Impl;
 
+/*
+  This script handles the text for the high score display,
+  and replaces null values (-1) with -------- when there are less than
+  5 highscores.
+ */
+
+
+
 public class HighScoreDisplayScript : MonoBehaviour
 {
     public int PlayerIndex;

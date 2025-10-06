@@ -1,5 +1,19 @@
 using UnityEngine;
 
+
+
+/*
+ 
+ This script handles the spawning logic of the demons when told.
+
+  A demon will spawn randomly in between the top and bottom of the screen
+    off to either side right outside the view of the camera.
+
+    They originally would spawn above and below, but this felt unfair
+    as players would have to avoid all four corners of the screen.
+ 
+ 
+ */
 public class DemonSpawnerScript : MonoBehaviour
 {
     public GameObject DemonPrefab;

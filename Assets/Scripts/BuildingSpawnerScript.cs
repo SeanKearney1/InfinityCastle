@@ -1,6 +1,28 @@
 //using JetBrains.Annotations;
 using UnityEngine;
 
+
+
+/*
+ 
+    This script spawns a building prefab when 
+told.
+
+It handles where to spawn the buildings on the screen,
+with a random X value, and a *preset* Y value to be
+just below where the player can see.
+ 
+ 
+*/
+
+
+
+
+
+
+
+
+
 public class BuildingSpawnerScript : MonoBehaviour
 {
     public GameObject BuildingPrefab;

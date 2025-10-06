@@ -4,6 +4,23 @@ using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using Unity.Mathematics;
 
+/*
+ 
+ This script handles ALL the logic for all the buttons
+in the UI across all panels and scenes.
+ 
+    It also houses all the preset gamemode data for when players
+    select a preset gamemode.
+
+    It also handles all visiblity logic, turing on and off certain
+    menus as players are in different scenes or click around.
+ 
+ 
+ */
+
+
+
+
 public class MainGUIButtons : MonoBehaviour
 {
     public GameObject MainMenuMainPanel;

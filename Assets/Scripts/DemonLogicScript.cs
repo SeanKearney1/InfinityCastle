@@ -5,6 +5,21 @@ using Unity.VisualScripting;
 //using UnityEditor.UI;
 using UnityEngine;
 
+
+
+/*
+ 
+ This script handles the logic of a demon.
+
+    The demon finds the closest player, then (at a gamemode preset speed)
+
+    moves towards the player.
+ 
+ 
+ */
+
+
+
 public class DemonLogicScript : MonoBehaviour
 {
     private GameObject Tanjiro;

@@ -1,4 +1,3 @@
-//using NUnit.Framework.Constraints;
 using System;
 using System.Reflection;
 using Unity.VisualScripting;
@@ -6,6 +5,36 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UIElements;
+
+
+
+/*
+ 
+ This is the script for the game manager.
+
+The game manager is a prefab that is spawned in my GameManagerMaker in the Title Scene.
+This is done because the game allows you to go back to the title scene, which would
+cause the GameManager object to be duplicated, since it isn't destroyed on load
+between scenes.
+
+This is nice because it allows presets for custom game modes to be automatically saved when moving between scenes.
+
+Throughout the scripts you'll see GameTime, this was added because the game's timer does not reset
+on scene load, causing cooldowns to not work properly when the game reset.
+ 
+There is probably a better option then GameTime, but it's really simple and I have full control of it so
+good enough for a little project like this.
+
+
+This script handles most of the overarching game logic and is accessed by almost all assets in a given scene.
+ 
+ */
+
+
+
+
+
+
 
 public class Muzan : MonoBehaviour
 {
@@ -40,7 +69,7 @@ public class Muzan : MonoBehaviour
 
     private float[] Points = { 1, 100, 1000, 0, 200, 200, 0, 0, 0 };
 
-    private bool InGame = false;
+    private bool InGame = false; // when going to main menu, it then would switch to game over. players null.
 
     /*
         Stats:
@@ -60,6 +89,9 @@ public class Muzan : MonoBehaviour
         1: Basic Coin = 100 points
         2: Killing a demon = 200 points
         3: Special Coin = 1,000 points
+
+        *** there was going to be the option of being "supercharged" destroying the buildings, but I forgot about
+        that idea and the power up coin became the dash coin instead.
 
 
 
@@ -148,7 +180,7 @@ public class Muzan : MonoBehaviour
         InGame = false;
         NewRun(); // clears current run stats
     }
-    private void TimerScore()
+    private void TimerScore() // adds a point every 10th of a second.
     {
         GameTime += Time.deltaTime;
 
@@ -167,13 +199,13 @@ public class Muzan : MonoBehaviour
 
     }
 
-    public void NewRun()
+    public void NewRun() // clears run stats;
     {
         CurrentRunPlayer1Stats = new float[9];
         CurrentRunPlayer2Stats = new float[9];
     }
 
-    private void PlayersAlive()
+    private void PlayersAlive() // controls logic for players being alive. 2 player and singleplayer.
     {
         if (Tanjiro.IsUnityNull() && Giyu.IsUnityNull() || (customGameSettings.getIsOneLife() && (Tanjiro.IsUnityNull() || Giyu.IsUnityNull())))
         {
@@ -195,6 +227,9 @@ public class Muzan : MonoBehaviour
             CurrentRunPlayer2Stats[7]++;
         }
     }
+
+    //rest is just getters and setters
+
 
     public float getPlayerCurrentRunStat(int player, int index)
     {

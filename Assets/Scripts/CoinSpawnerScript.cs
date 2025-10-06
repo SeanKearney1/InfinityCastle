@@ -2,6 +2,17 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
+/*
+    This script handles the spawning of coins when told.
+    Spawns randomly on X axis, just below player view.
+
+    Handles the Max count for the 3 coin types.
+ 
+ 
+ 
+*/
+
+
 public class CoinSpawnerScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created

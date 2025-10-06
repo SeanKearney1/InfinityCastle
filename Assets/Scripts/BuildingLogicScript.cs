@@ -10,8 +10,28 @@ public class BuildingLogicScript : MonoBehaviour
     private GameObject[] ParentedObjects = { };
     private GameObject Muzan;
     private GameObject Nakime;
+
+
+
+/*
+    This script is the brain of each building that flies up past the player.
+ 
+    When it starts it continously moves upward, and if it touches a player,
+    it will add that player to it's list and will move that player upwards.
+
+    Along with that it will set the collision layer of the player(s) to be able to go
+    through the invisible walls around the map.
+ */
+
+
+
+
+
+
+
     void Start()
     {
+
         time_stamp = Time.time;
         rb = GetComponent<Rigidbody2D>();
         Muzan = GameObject.Find("GameManager");
@@ -22,8 +42,6 @@ public class BuildingLogicScript : MonoBehaviour
             MoveSpeed = Muzan.GetComponent<Muzan>().customGameSettings.getBuildingSpeed();
         }
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (time_stamp + WarnTime < Time.time)

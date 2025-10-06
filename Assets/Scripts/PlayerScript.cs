@@ -8,6 +8,18 @@ using UnityEngine;
 //using UnityEngine.SceneManagement;
 //using UnityEngine.Timeline;
 
+
+
+/*
+ 
+    This script handles the player movement, input, and dashing ability,
+    though dash damage is run through the player attack script.
+ 
+    This script handles the movement for both player 1 and 2, with player 1
+    using WASD and player 2 using the arrow keys (like fireboy and watergirl).
+ 
+ 
+ */
 public class PlayerScript : MonoBehaviour
 {
 

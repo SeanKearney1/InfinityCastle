@@ -1,6 +1,31 @@
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
+
+/*
+ 
+ This is a custom class that holds data on any data the player can change
+for gamemodes.
+
+    There is two types of data in this class, floats and bools. (ints where redundant)
+
+    instead of two sets of arrays or array lists, I opted for invidual variables
+    with each having a getter function.
+
+     I did this because Muzan.getcomponent<Muzan>().customsettings.floats[57382] 
+    is a nightmare, and Muzan.getcomponent<Muzan>().customsettings.getPillarWeight()
+    is a lot more understandable, and though more time consuming, is better for cleaner 
+    code, and no misunderstandings in other files. Also if I add something in the middle 
+    everything would break, and we don't program like PirateSoftware here.
+ 
+ 
+    There is a list of default float and bool values though, this is so null variables
+    in custom mode do noot keep values from previous game modes.
+ 
+ */
+
+
+
 public class CustomGameSettings
 {
 

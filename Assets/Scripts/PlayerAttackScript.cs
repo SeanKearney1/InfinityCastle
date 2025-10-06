@@ -2,6 +2,16 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
+/*
+ Handles the attack for a player.
+
+    This is in a seperate script from the player script
+    because the "Kill Aura" gamemobject for the player
+    is seperate and at the time this seemed easier.
+
+    If I still believe that is up for debate.
+ 
+ */
 public class PlayerAttackScript : MonoBehaviour
 {
     private double AttackDuration = 0.25;
