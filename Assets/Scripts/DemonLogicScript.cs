@@ -13,6 +13,12 @@ public class DemonLogicScript : MonoBehaviour
     private Rigidbody2D rb;
     private GameObject Muzan;
 
+    private bool isSlashed = false;
+    private float Slashed_time_stamp = 0.0f;
+    private Vector2 SlashedPos = new Vector2();
+
+    private float dying_duration = 1.0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,28 +39,39 @@ public class DemonLogicScript : MonoBehaviour
     void Update()
     {
         //Debug.Log("DEMON!!!!!!");
-        double TanjiroDistance = 0;
-        double GiyuDistance = 0;
+        if (isSlashed == false)
+        {
+            double TanjiroDistance = 0;
+            double GiyuDistance = 0;
 
-        if (Tanjiro != null) {
-            TanjiroDistance = Math.Sqrt(Math.Pow(Tanjiro.transform.position.x - this.gameObject.transform.position.x, 2) + Math.Pow(Tanjiro.transform.position.y - this.gameObject.transform.position.y, 2));
+            if (Tanjiro != null)
+            {
+                TanjiroDistance = Math.Sqrt(Math.Pow(Tanjiro.transform.position.x - this.gameObject.transform.position.x, 2) + Math.Pow(Tanjiro.transform.position.y - this.gameObject.transform.position.y, 2));
+            }
+            else
+            {
+                TanjiroDistance = 99999999;
+            }
+            if (Giyu != null)
+            {
+                GiyuDistance = Math.Sqrt(Math.Pow(Giyu.transform.position.x - this.gameObject.transform.position.x, 2) + Math.Pow(Giyu.transform.position.y - this.gameObject.transform.position.y, 2));
+            }
+            else
+            {
+                GiyuDistance = 99999999;
+            }
+            if (TanjiroDistance <= GiyuDistance && Tanjiro != null)
+            {
+                SetDirection(Tanjiro.transform.position);
+            }
+            else if (Giyu != null)
+            {
+                SetDirection(Giyu.transform.position);
+            }
         }
-        else {
-            TanjiroDistance = 99999999;
-        }
-        if (Giyu != null) {
-            GiyuDistance = Math.Sqrt(Math.Pow(Giyu.transform.position.x - this.gameObject.transform.position.x, 2) + Math.Pow(Giyu.transform.position.y - this.gameObject.transform.position.y, 2));
-        }
-        else {
-            GiyuDistance = 99999999;
-        }
-        if (TanjiroDistance <= GiyuDistance && Tanjiro != null)
+        else
         {
-            SetDirection(Tanjiro.transform.position);
-        }
-        else if (Giyu != null)
-        {
-            SetDirection(Giyu.transform.position);
+            Dying();
         }
 
     }
@@ -68,6 +85,61 @@ public class DemonLogicScript : MonoBehaviour
 
         demon_direction.Normalize();
         demon_direction *= DemonSpeed;
-        rb.linearVelocity = demon_direction;      
+        rb.linearVelocity = demon_direction;
+
+        FlipDemon(demon_direction);
+    }
+
+
+    private void Dying()
+    {
+        if (Slashed_time_stamp + dying_duration <= Time.time)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+
+        Vector2 demon_direction = new Vector2(0, 0);
+        demon_direction.x = SlashedPos.x - this.transform.position.x;
+        demon_direction.y = SlashedPos.y - this.transform.position.y;
+
+        demon_direction.Normalize();
+        demon_direction *= -10 * DemonSpeed * (1 - (Time.time / (Slashed_time_stamp + dying_duration)));
+        rb.linearVelocity = demon_direction;
+
+        FlipDemon(demon_direction);
+    }
+
+    public void Slashed(int player)
+    {
+        isSlashed = true;
+        Slashed_time_stamp = Time.time;
+        gameObject.tag = "DemonDead";
+
+        gameObject.GetComponent<Animator>().SetBool("IsSlashed", true);
+
+        if (player == 0)
+        {
+            SlashedPos = Tanjiro.transform.position;
+        }
+        else
+        {
+            SlashedPos = Giyu.transform.position;
+        }
+
+    }
+
+
+    private void FlipDemon(Vector2 demon_direction)
+    {
+        if (demon_direction.x < 0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 }

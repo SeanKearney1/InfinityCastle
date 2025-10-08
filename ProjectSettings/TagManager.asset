@@ -9,6 +9,7 @@ TagManager:
   - PlayerGrab
   - ScreenSpace
   - Demon
+  - DemonDead
   layers:
   - Default
   - TransparentFX
@@ -57,6 +58,9 @@ TagManager:
     locked: 0
   - name: BackGround1
     uniqueID: 3828163689
+    locked: 0
+  - name: Logo
+    uniqueID: 3282133399
     locked: 0
   - name: Coins
     uniqueID: 2128259821

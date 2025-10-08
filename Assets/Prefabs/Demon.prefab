@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3300010738193284973}
   - component: {fileID: 4185370122071535770}
   - component: {fileID: 7693552631705093817}
+  - component: {fileID: 4315134835622488811}
   m_Layer: 0
   m_Name: Demon
   m_TagString: Demon
@@ -119,7 +120,7 @@ SpriteRenderer:
   m_SortingLayerID: -1339983423
   m_SortingLayer: 11
   m_SortingOrder: 0
-  m_Sprite: {fileID: -762086566524227755, guid: 3494e77aee96f974393c726d73019f54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9734cfb5bf315b748bf8f0befbf4c944, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,3 +170,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &4315134835622488811
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4517707021844467640}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ed794e5dc8c38040a04408002d63aa6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

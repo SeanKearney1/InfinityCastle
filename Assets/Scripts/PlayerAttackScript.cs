@@ -101,7 +101,7 @@ public class PlayerAttackScript : MonoBehaviour
                             Nakime.GetComponent<Nakime>().KilledDemon();
                             Muzan.GetComponent<Muzan>().AddPlayerCurrentRunStat(PlayerIndex, attack_dash_index);
                         }
-                        Destroy(ObjectsInKillAura[i]);
+                        ObjectsInKillAura[i].GetComponent<DemonLogicScript>().Slashed(PlayerIndex);
                         ObjectsInKillAura = RemoveFromArray(ObjectsInKillAura, i);
                         i--;
                     }
