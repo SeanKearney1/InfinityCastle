@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ public class DashesUiScript : MonoBehaviour
 {
     public int PlayerIndex;
 
+    private String Dashes = "DASHES: ";
+
     private GameObject Muzan;
 
     public GameObject Player1;
@@ -31,11 +34,11 @@ public class DashesUiScript : MonoBehaviour
     {
         if (PlayerIndex == 0 && Muzan.GetComponent<Muzan>().Tanjiro != null)
         {
-            this.gameObject.GetComponent<TextMeshProUGUI>().text = "Dashes: "+ Player1.GetComponent<PlayerScript>().getDashCount();
+            this.gameObject.GetComponent<TextMeshProUGUI>().text = Dashes+ Player1.GetComponent<PlayerScript>().getDashCount();
         }
         else if (PlayerIndex == 1 && Muzan.GetComponent<Muzan>().Giyu != null)
         {
-            this.gameObject.GetComponent<TextMeshProUGUI>().text = "Dashes: "+ Player2.GetComponent<PlayerScript>().getDashCount();
+            this.gameObject.GetComponent<TextMeshProUGUI>().text = Dashes+ Player2.GetComponent<PlayerScript>().getDashCount();
         }    
     }
 }
