@@ -3,6 +3,13 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
+/*
+ 
+ Handles the logic fro a pillar.
+
+    Pillar moves constantly either left or
+    right and grabs any player it collides with.
+ */
 public class PillarLogicScript : MonoBehaviour
 {
 

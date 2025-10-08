@@ -3,6 +3,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ 
+    This script harvests the custom presets from the custom game modes
+    page, and also refills that page when reloaded.
+ 
+ 
+ */
+
 public class CustomModeHandlerScript : MonoBehaviour
 {
 

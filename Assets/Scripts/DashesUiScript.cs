@@ -1,6 +1,17 @@
 using TMPro;
 using UnityEngine;
 
+
+/*
+    This script is just another little script
+    written so ui elements can grab data.
+
+    This one grabes data for how many dashes
+    the player has, and checks which player their UI
+    covers.
+*/
+
+
 public class DashesUiScript : MonoBehaviour
 {
     public int PlayerIndex;

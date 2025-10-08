@@ -2,6 +2,14 @@ using System;
 using UnityEngine;
 //using UnityEngine.Experimental.AI;
 
+/*
+ This script handled the high score, and originally worked
+    along side GameManager before being scrapped and relevant
+    code being merged into the "Muzan" script, which is the script
+    for GameManager.
+ 
+ */
+
 public class HighScoreScript : MonoBehaviour
 {
     private int[] Player1HighScores = { -1, -1, -1, -1, -1 };

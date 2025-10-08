@@ -3,6 +3,14 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+/*
+ 
+    Another script for passing information to
+    UI elements, this one handles the current run scores for 
+    each UI's repective player.
+ 
+ */
 public class ScoreUiScript : MonoBehaviour
 {
     public int PlayerIndex;

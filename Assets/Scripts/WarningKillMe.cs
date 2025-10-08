@@ -1,6 +1,13 @@
 //using UnityEditor.UI;
 using UnityEngine;
 
+/*
+ 
+ This script is for the warning areas that spawn for the pillars
+  and buildings. Terminates itself after "live_time" seconds.
+ 
+ 
+ */
 public class WarningKillMe : MonoBehaviour
 {
 

@@ -3,6 +3,21 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
+/*
+ 
+ This script belongs to "Spawners" and is the brain
+    behind all the spawning of enemies and coins/
+
+    This script tells the other spawners when and what to spawn,
+    managing custom cooldowns, max counts (not for coins) and what
+    enemies to spawn given their weights.
+ 
+ 
+ */
+
+
+
 public class Nakime : MonoBehaviour
 {
     private int[] SpawnWeights = { 20, 25, 55 }; // Demon, Pillar, Building.

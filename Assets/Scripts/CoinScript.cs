@@ -2,6 +2,17 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/*
+ 
+ 
+This script handles the logic for coins,
+moving them upwards at a constant rate (dependant of the coin type)
+
+handles the updating of points and it's destruction upon colliding
+with a player or disapearing uo above the camera.
+ 
+ 
+ */
 public class CoinScript : MonoBehaviour
 {
     private float MoveSpeed;

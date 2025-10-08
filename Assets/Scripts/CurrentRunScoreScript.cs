@@ -3,6 +3,13 @@ using Unity.VisualScripting;
 //using UnityEditor.Tilemaps;
 using UnityEngine;
 
+
+/*
+    This script handles the text on the game over screen for the previous run
+    for both players.
+ */
+
+
 public class CurrentRunScoreScript : MonoBehaviour
 {
     public int PlayerIndex;
