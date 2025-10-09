@@ -138,7 +138,7 @@ public class Muzan : MonoBehaviour
     {
         if (InGame)
         {
-            TimerScore();
+            if (customGameSettings.getTimerAddScore()) { TimerScore(); }
             PlayersAlive();
             DEBUG__PrintStats();
             UpdateScore();
@@ -207,7 +207,7 @@ public class Muzan : MonoBehaviour
 
     private void PlayersAlive() // controls logic for players being alive. 2 player and singleplayer.
     {
-        if (Tanjiro.IsUnityNull() && Giyu.IsUnityNull() || (customGameSettings.getIsOneLife() && (Tanjiro.IsUnityNull() || Giyu.IsUnityNull())))
+        if (Tanjiro.IsUnityNull() && Giyu.IsUnityNull() || (!customGameSettings.getSinglePlayer() && customGameSettings.getIsOneLife() && (Tanjiro.IsUnityNull() || Giyu.IsUnityNull())))
         {
             addNewHighScorePlayer(0, CurrentRunPlayer1Stats[ScoreIndex]);
             addNewHighScorePlayer(1, CurrentRunPlayer2Stats[ScoreIndex]);

@@ -63,6 +63,7 @@ public class CustomGameSettings
     private bool CanAttackDash;
     private bool Singleplayer;
     private bool FriendlyFire;
+    private bool TimerAddScore;
 
     private float[] default_floats = {
         25.0f,          // PillarWeight
@@ -72,16 +73,16 @@ public class CustomGameSettings
         20.0f,          // DemonWeight
         1.0f,           // DemonSpeed
         50.0f,          // YellowCoinWeight
-        50.0f,          // YellowCoinSpeed
+        20.0f,          // YellowCoinSpeed
         10.0f,          // RareCoinWeight
-        35.0f,          // RareCoinSpeed
+        15.0f,          // RareCoinSpeed
         40.0f,          // DashCoinWeight
-        30.0f,          // DashCoinSpeed
+        20.0f,          // DashCoinSpeed
         1.0f,           // EnemySpawnRateMin
         2.0f,           // EnemySpawnRateMax
         0.0f,           // CoinSpawnRateMin
         1.0f,           // CoinSpawnRateMax
-        20.0f,          // MaxPillars
+        2.0f,           // MaxPillars
         20.0f,          // MaxBuildings
         20.0f,          // MaxDemons
         20.0f,          // MaxYellowCoins
@@ -94,7 +95,8 @@ public class CustomGameSettings
         true,       // Can use sword
         true,       // Can use dash
         false,      // Singleplayer
-        false       // Friendly Fire
+        false,      // Friendly Fire
+        true        // Timer add to Score
     };
 
 
@@ -137,6 +139,7 @@ public class CustomGameSettings
         CanAttackDash = default_bools[2];
         Singleplayer = default_bools[3];
         FriendlyFire = default_bools[4];
+        TimerAddScore = default_bools[5];
     }
     public CustomGameSettings(float[] float_settings, bool[] bool_settings)
     {
@@ -176,6 +179,7 @@ public class CustomGameSettings
         CanAttackDash = bool_settings[2];
         Singleplayer = bool_settings[3];
         FriendlyFire = bool_settings[4];
+        TimerAddScore = bool_settings[5];
     }
 
 
@@ -205,6 +209,7 @@ public class CustomGameSettings
     public bool getCanAttackDash() { return CanAttackDash; }
     public bool getSinglePlayer() { return Singleplayer; }
     public bool getFriendlyFire() { return FriendlyFire; }
+    public bool getTimerAddScore() { return TimerAddScore; }
 
 
     public float[] getFloatDefaults()

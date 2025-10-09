@@ -15,7 +15,7 @@ public class CustomModeHandlerScript : MonoBehaviour
 {
 
     private int float_settings_max = 22;
-    private int bool_settings_max = 5;
+    private int bool_settings_max = 6;
 
     public GameObject[] CustomOptions;
     private GameObject Muzan;
@@ -55,6 +55,7 @@ public class CustomModeHandlerScript : MonoBehaviour
         CustomOptions[24].GetComponent<Toggle>().isOn = Muzan.GetComponent<Muzan>().customGameSettings.getCanAttackDash();
         CustomOptions[25].GetComponent<Toggle>().isOn = Muzan.GetComponent<Muzan>().customGameSettings.getSinglePlayer();
         CustomOptions[26].GetComponent<Toggle>().isOn = Muzan.GetComponent<Muzan>().customGameSettings.getFriendlyFire();
+        CustomOptions[27].GetComponent<Toggle>().isOn = Muzan.GetComponent<Muzan>().customGameSettings.getTimerAddScore();
 
 
     }

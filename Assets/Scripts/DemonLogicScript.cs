@@ -102,6 +102,13 @@ public class DemonLogicScript : MonoBehaviour
         demon_direction *= DemonSpeed;
         rb.linearVelocity = demon_direction;
 
+        if (demon_direction.y >= 0) {
+            gameObject.GetComponent<Animator>().SetBool("IsUp", true);
+        }
+        else {
+            gameObject.GetComponent<Animator>().SetBool("IsUp", false);
+        }
+
         FlipDemon(demon_direction);
     }
 

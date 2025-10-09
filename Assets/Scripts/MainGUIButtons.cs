@@ -30,6 +30,7 @@ public class MainGUIButtons : MonoBehaviour
     public GameObject StatsPanel;
     public GameObject GameModePanel;
     public GameObject CustomModePanel;
+    public GameObject OptionsPanel;
     public GameObject PauseDarkness;
     public GameObject Player1HighScoreText;
     public GameObject Player2HighScoreText;
@@ -56,16 +57,16 @@ public class MainGUIButtons : MonoBehaviour
             0.0f,           // DemonWeight
             0.0f,           // DemonSpeed
             90.0f,          // YellowCoinWeight
-            40.0f,          // YellowCoinSpeed
+            15.0f,          // YellowCoinSpeed
             10.0f,          // RareCoinWeight
-            30.0f,          // RareCoinSpeed
+            10.0f,          // RareCoinSpeed
             0.0f,           // DashCoinWeight
-            0.0f,           // DashCoinSpeed
+            10.0f,          // DashCoinSpeed
             0.5f,           // EnemySpawnRateMin
             1.5f,           // EnemySpawnRateMax
             0.0f,           // CoinSpawnRateMin
-            0.75f,          // CoinSpawnRateMax
-            3.0f,           // MaxPillars
+            0.25f,          // CoinSpawnRateMax
+            2.0f,           // MaxPillars
             20.0f,          // MaxBuildings
             0.0f,           // MaxDemons
             20.0f,          // MaxYellowCoins
@@ -80,16 +81,16 @@ public class MainGUIButtons : MonoBehaviour
             20.0f,          // DemonWeight
             1.0f,           // DemonSpeed
             50.0f,          // YellowCoinWeight
-            50.0f,          // YellowCoinSpeed
+            20.0f,          // YellowCoinSpeed
             10.0f,          // RareCoinWeight
-            35.0f,          // RareCoinSpeed
+            15.0f,          // RareCoinSpeed
             40.0f,          // DashCoinWeight
-            30.0f,          // DashCoinSpeed
+            20.0f,          // DashCoinSpeed
             1.0f,           // EnemySpawnRateMin
             2.0f,           // EnemySpawnRateMax
             0.0f,           // CoinSpawnRateMin
             1.0f,           // CoinSpawnRateMax
-            20.0f,          // MaxPillars
+            2.0f,           // MaxPillars
             20.0f,          // MaxBuildings
             20.0f,          // MaxDemons
             20.0f,          // MaxYellowCoins
@@ -104,16 +105,16 @@ public class MainGUIButtons : MonoBehaviour
             50.0f,          // DemonWeight
             1.5f,           // DemonSpeed
             70.0f,          // YellowCoinWeight
-            55.0f,          // YellowCoinSpeed
+            25.0f,          // YellowCoinSpeed
             10.0f,          // RareCoinWeight
-            40.0f,          // RareCoinSpeed
+            20.0f,          // RareCoinSpeed
             20.0f,          // DashCoinWeight
-            35.0f,          // DashCoinSpeed
+            25.0f,          // DashCoinSpeed
             0.75f,          // EnemySpawnRateMin
             1.5f,           // EnemySpawnRateMax
             0.0f,           // CoinSpawnRateMin
             1.0f,           // CoinSpawnRateMax
-            20.0f,          // MaxPillars
+            2.0f,           // MaxPillars
             20.0f,          // MaxBuildings
             20.0f,          // MaxDemons
             20.0f,          // MaxYellowCoins
@@ -126,24 +127,27 @@ public class MainGUIButtons : MonoBehaviour
     private bool[][] bool_preset_gamemodes = {
         new bool[]{ // Coin Race
             false,      // Players share life
-            false,       // Can use sword
-            false,       // Can use dash
+            false,      // Can use sword
+            false,      // Can use dash
             false,      // Singleplayer
-            false       // Friendly Fire
+            false,      // Friendly Fire
+            false       // Timer add to Score
         },
         new bool[]{  // Alone
             false,      // Players share life
             true,       // Can use sword
             true,       // Can use dash
-            true,      // Singleplayer
-            false       // Friendly Fire
+            true,       // Singleplayer
+            false,      // Friendly Fire
+            true        // Timer add to Score
         },
         new bool[]{ // Demon Slayer
-            true,      // Players share life
+            true,       // Players share life
             true,       // Can use sword
             true,       // Can use dash
             false,      // Singleplayer
-            true       // Friendly Fire
+            true,       // Friendly Fire
+            true        // Timer add to Score
         }
     };
 
@@ -162,6 +166,7 @@ public class MainGUIButtons : MonoBehaviour
         PauseDarkness.SetActive(false);
         GameModePanel.SetActive(false);
         CustomModePanel.SetActive(false);
+        OptionsPanel.SetActive(false);
         if (GameScene == 0)
         {
             MainMenuMainPanel.SetActive(true);
@@ -189,6 +194,7 @@ public class MainGUIButtons : MonoBehaviour
         HighscorePanel.SetActive(false);
         PauseDarkness.SetActive(false);
         StatsPanel.SetActive(false);
+        OptionsPanel.SetActive(false);
         Time.timeScale = 1.0f;
         gamePaused = false;
     }
@@ -203,6 +209,7 @@ public class MainGUIButtons : MonoBehaviour
                 GameOverMainPanel.SetActive(false);
                 PauseDarkness.SetActive(true);
                 StatsPanel.SetActive(false);
+                OptionsPanel.SetActive(false);
                 Time.timeScale = 0.0f;
                 gamePaused = true;
             }
@@ -214,6 +221,7 @@ public class MainGUIButtons : MonoBehaviour
                 HighscorePanel.SetActive(false);
                 PauseDarkness.SetActive(false);
                 StatsPanel.SetActive(false);
+                OptionsPanel.SetActive(false);
                 Time.timeScale = 1.0f;
                 gamePaused = false;
             }
@@ -244,6 +252,7 @@ public class MainGUIButtons : MonoBehaviour
         InGameMainPanel.SetActive(false);
         GameOverMainPanel.SetActive(false);
         HighscorePanel.SetActive(true);
+        OptionsPanel.SetActive(false);
         if (GameScene != 1)
         {
             PauseDarkness.SetActive(false);
@@ -274,6 +283,7 @@ public class MainGUIButtons : MonoBehaviour
         StatsPanel.SetActive(false);
         GameModePanel.SetActive(false);
         CustomModePanel.SetActive(false);
+        OptionsPanel.SetActive(false);
     }
 
     public void GameModesPage()
@@ -284,6 +294,7 @@ public class MainGUIButtons : MonoBehaviour
         InGameMainPanel.SetActive(false);
         GameOverMainPanel.SetActive(false);
         PauseDarkness.SetActive(true);
+        OptionsPanel.SetActive(false);
     }
 
     public void CustomModePage()
@@ -293,6 +304,7 @@ public class MainGUIButtons : MonoBehaviour
         MainMenuMainPanel.SetActive(false);
         InGameMainPanel.SetActive(false);
         GameOverMainPanel.SetActive(false);
+        OptionsPanel.SetActive(false);
 
         gameObject.GetComponentInChildren<CustomModeHandlerScript>().FillCustomData();
     }
@@ -309,9 +321,13 @@ public class MainGUIButtons : MonoBehaviour
         {
             gameObject.GetComponentInChildren<CustomModeHandlerScript>().HarvestCustomData();
         }
+        else if (index == 1234)
+        { //normal.
+            Debug.Log("NORMAL GAME MODE");
+            Muzan.GetComponent<Muzan>().customGameSettings = new CustomGameSettings(new CustomGameSettings().getFloatDefaults(), new CustomGameSettings().getBoolDefaults());
+        }
         else
         {
-            Debug.Log(Muzan);
             Muzan.GetComponent<Muzan>().customGameSettings = new CustomGameSettings(float_preset_gamemodes[index], bool_preset_gamemodes[index]);
         }
 
@@ -328,6 +344,7 @@ public class MainGUIButtons : MonoBehaviour
         HighscorePanel.SetActive(false);
         PauseDarkness.SetActive(true);
         StatsPanel.SetActive(true);
+        OptionsPanel.SetActive(false);
 
         FillStats();
     }
@@ -345,6 +362,19 @@ public class MainGUIButtons : MonoBehaviour
         Player2Stats.GetComponent<TextMeshProUGUI>().text = Muzan.GetComponent<Muzan>().getStringPlayerStats(1);
         Player1TotalStats.GetComponent<TextMeshProUGUI>().text = Muzan.GetComponent<Muzan>().getStringPlayerTotalStats(0);
         Player2TotalStats.GetComponent<TextMeshProUGUI>().text = Muzan.GetComponent<Muzan>().getStringPlayerTotalStats(1);
+    }
+
+
+
+    public void Options()
+    {
+        MainMenuMainPanel.SetActive(false);
+        InGameMainPanel.SetActive(false);
+        GameOverMainPanel.SetActive(false);
+        HighscorePanel.SetActive(false);
+        PauseDarkness.SetActive(true);
+        StatsPanel.SetActive(false);  
+        OptionsPanel.SetActive(true);
     }
 
 }
