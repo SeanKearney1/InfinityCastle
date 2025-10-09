@@ -179,7 +179,7 @@ MonoBehaviour:
   m_text: GAME OVER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ceb90e29b38d803449077ff4267346b0, type: 2}
-  m_sharedMaterial: {fileID: -6799112705880301775, guid: ceb90e29b38d803449077ff4267346b0, type: 2}
+  m_sharedMaterial: {fileID: -6354901688324571780, guid: ceb90e29b38d803449077ff4267346b0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de10cd85225f94a4cab5092bbeb8ef69
+guid: b2ae6176f961ca04a9bdeb0818c330d7
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -113,6 +113,81 @@ TextureImporter:
   - first:
       213: 6548266905973711447
     second: DemonSlayer Atlas_36
+  - first:
+      213: -8745125969562936986
+    second: DemonSlayer Atlas_37
+  - first:
+      213: 6873875855129804040
+    second: DemonSlayer Atlas_38
+  - first:
+      213: 6303731940108355590
+    second: DemonSlayer Atlas_39
+  - first:
+      213: -6036503591667798572
+    second: DemonSlayer Atlas_40
+  - first:
+      213: -7984492586286418770
+    second: DemonSlayer Atlas_41
+  - first:
+      213: 1873634966370299627
+    second: DemonSlayer Atlas_42
+  - first:
+      213: -5886504748156877892
+    second: DemonSlayer Atlas_43
+  - first:
+      213: -1315854972127489695
+    second: DemonSlayer Atlas_44
+  - first:
+      213: -5872122657838048569
+    second: DemonSlayer Atlas_45
+  - first:
+      213: 5328563015460126478
+    second: DemonSlayer Atlas_46
+  - first:
+      213: -8935395879487628843
+    second: DemonSlayer Atlas_47
+  - first:
+      213: 6607440123899636775
+    second: DemonSlayer Atlas_48
+  - first:
+      213: 8516853264730342133
+    second: DemonSlayer Atlas_49
+  - first:
+      213: 4299874193335760608
+    second: DemonSlayer Atlas_50
+  - first:
+      213: 2629295998709368911
+    second: DemonSlayer Atlas_51
+  - first:
+      213: -8105560794052135065
+    second: DemonSlayer Atlas_52
+  - first:
+      213: -7466927037963776281
+    second: DemonSlayer Atlas_53
+  - first:
+      213: -5659971896799243259
+    second: DemonSlayer Atlas_54
+  - first:
+      213: 8191676899117372867
+    second: DemonSlayer Atlas_55
+  - first:
+      213: -2624503092083615684
+    second: DemonSlayer Atlas_56
+  - first:
+      213: -4430061944628435342
+    second: DemonSlayer Atlas_57
+  - first:
+      213: -2847689224570231543
+    second: DemonSlayer Atlas_58
+  - first:
+      213: 1542276364166753288
+    second: DemonSlayer Atlas_59
+  - first:
+      213: 2902242586849407840
+    second: DemonSlayer Atlas_60
+  - first:
+      213: -1961305161462927032
+    second: DemonSlayer Atlas_61
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -159,7 +234,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -246,8 +321,8 @@ TextureImporter:
       name: DemonSlayer Atlas_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 40
+        x: 10
+        y: 50
         width: 10
         height: 10
       alignment: 0
@@ -268,7 +343,7 @@ TextureImporter:
       name: DemonSlayer Atlas_2
       rect:
         serializedVersion: 2
-        x: 10
+        x: 20
         y: 50
         width: 10
         height: 10
@@ -290,8 +365,8 @@ TextureImporter:
       name: DemonSlayer Atlas_3
       rect:
         serializedVersion: 2
-        x: 10
-        y: 40
+        x: 30
+        y: 50
         width: 10
         height: 10
       alignment: 0
@@ -312,9 +387,9 @@ TextureImporter:
       name: DemonSlayer Atlas_4
       rect:
         serializedVersion: 2
-        x: 20
+        x: 40
         y: 50
-        width: 10
+        width: 8
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -334,10 +409,10 @@ TextureImporter:
       name: DemonSlayer Atlas_5
       rect:
         serializedVersion: 2
-        x: 20
-        y: 40
+        x: 48
+        y: 50
         width: 10
-        height: 10
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,10 +431,10 @@ TextureImporter:
       name: DemonSlayer Atlas_6
       rect:
         serializedVersion: 2
-        x: 30
+        x: 56
         y: 50
-        width: 10
-        height: 10
+        width: 7
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,10 +453,10 @@ TextureImporter:
       name: DemonSlayer Atlas_7
       rect:
         serializedVersion: 2
-        x: 30
-        y: 40
-        width: 10
-        height: 10
+        x: 63
+        y: 56
+        width: 7
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -400,10 +475,10 @@ TextureImporter:
       name: DemonSlayer Atlas_8
       rect:
         serializedVersion: 2
-        x: 40
-        y: 40
-        width: 10
-        height: 10
+        x: 65
+        y: 49
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,7 +498,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 30
+        y: 40
         width: 10
         height: 10
       alignment: 0
@@ -444,8 +519,8 @@ TextureImporter:
       name: DemonSlayer Atlas_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 20
+        x: 10
+        y: 40
         width: 10
         height: 10
       alignment: 0
@@ -466,8 +541,8 @@ TextureImporter:
       name: DemonSlayer Atlas_11
       rect:
         serializedVersion: 2
-        x: 10
-        y: 30
+        x: 20
+        y: 40
         width: 10
         height: 10
       alignment: 0
@@ -488,8 +563,8 @@ TextureImporter:
       name: DemonSlayer Atlas_12
       rect:
         serializedVersion: 2
-        x: 10
-        y: 20
+        x: 30
+        y: 40
         width: 10
         height: 10
       alignment: 0
@@ -510,8 +585,8 @@ TextureImporter:
       name: DemonSlayer Atlas_13
       rect:
         serializedVersion: 2
-        x: 20
-        y: 30
+        x: 40
+        y: 40
         width: 10
         height: 10
       alignment: 0
@@ -532,9 +607,9 @@ TextureImporter:
       name: DemonSlayer Atlas_14
       rect:
         serializedVersion: 2
-        x: 20
-        y: 20
-        width: 10
+        x: 50
+        y: 40
+        width: 8
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -554,9 +629,9 @@ TextureImporter:
       name: DemonSlayer Atlas_15
       rect:
         serializedVersion: 2
-        x: 30
-        y: 30
-        width: 10
+        x: 58
+        y: 40
+        width: 7
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -576,10 +651,10 @@ TextureImporter:
       name: DemonSlayer Atlas_16
       rect:
         serializedVersion: 2
-        x: 30
-        y: 20
-        width: 10
-        height: 10
+        x: 65
+        y: 40
+        width: 7
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -598,10 +673,10 @@ TextureImporter:
       name: DemonSlayer Atlas_17
       rect:
         serializedVersion: 2
-        x: 40
-        y: 30
-        width: 10
-        height: 10
+        x: 72
+        y: 44
+        width: 8
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -620,10 +695,10 @@ TextureImporter:
       name: DemonSlayer Atlas_18
       rect:
         serializedVersion: 2
-        x: 40
-        y: 20
-        width: 10
-        height: 10
+        x: 80
+        y: 46
+        width: 7
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -642,10 +717,10 @@ TextureImporter:
       name: DemonSlayer Atlas_19
       rect:
         serializedVersion: 2
-        x: 50
-        y: 30
-        width: 9
-        height: 10
+        x: 80
+        y: 37
+        width: 6
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -664,8 +739,8 @@ TextureImporter:
       name: DemonSlayer Atlas_20
       rect:
         serializedVersion: 2
-        x: 50
-        y: 20
+        x: 0
+        y: 30
         width: 10
         height: 10
       alignment: 0
@@ -686,9 +761,9 @@ TextureImporter:
       name: DemonSlayer Atlas_21
       rect:
         serializedVersion: 2
-        x: 60
-        y: 20
-        width: 6
+        x: 10
+        y: 30
+        width: 10
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -708,8 +783,8 @@ TextureImporter:
       name: DemonSlayer Atlas_22
       rect:
         serializedVersion: 2
-        x: 0
-        y: 10
+        x: 20
+        y: 30
         width: 10
         height: 10
       alignment: 0
@@ -730,8 +805,8 @@ TextureImporter:
       name: DemonSlayer Atlas_23
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 30
+        y: 30
         width: 10
         height: 10
       alignment: 0
@@ -752,8 +827,8 @@ TextureImporter:
       name: DemonSlayer Atlas_24
       rect:
         serializedVersion: 2
-        x: 10
-        y: 10
+        x: 40
+        y: 30
         width: 10
         height: 10
       alignment: 0
@@ -774,9 +849,9 @@ TextureImporter:
       name: DemonSlayer Atlas_25
       rect:
         serializedVersion: 2
-        x: 10
-        y: 0
-        width: 10
+        x: 50
+        y: 30
+        width: 9
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -796,9 +871,9 @@ TextureImporter:
       name: DemonSlayer Atlas_26
       rect:
         serializedVersion: 2
-        x: 20
-        y: 10
-        width: 10
+        x: 59
+        y: 30
+        width: 8
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -818,9 +893,9 @@ TextureImporter:
       name: DemonSlayer Atlas_27
       rect:
         serializedVersion: 2
-        x: 20
-        y: 0
-        width: 10
+        x: 67
+        y: 30
+        width: 6
         height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -840,10 +915,10 @@ TextureImporter:
       name: DemonSlayer Atlas_28
       rect:
         serializedVersion: 2
-        x: 30
-        y: 10
-        width: 10
-        height: 10
+        x: 73
+        y: 36
+        width: 7
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -862,10 +937,10 @@ TextureImporter:
       name: DemonSlayer Atlas_29
       rect:
         serializedVersion: 2
-        x: 30
-        y: 0
-        width: 10
-        height: 10
+        x: 73
+        y: 28
+        width: 7
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -884,10 +959,10 @@ TextureImporter:
       name: DemonSlayer Atlas_30
       rect:
         serializedVersion: 2
-        x: 40
-        y: 10
-        width: 10
-        height: 10
+        x: 78
+        y: 19
+        width: 7
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -906,8 +981,8 @@ TextureImporter:
       name: DemonSlayer Atlas_31
       rect:
         serializedVersion: 2
-        x: 40
-        y: 0
+        x: 0
+        y: 20
         width: 10
         height: 10
       alignment: 0
@@ -928,7 +1003,7 @@ TextureImporter:
       name: DemonSlayer Atlas_32
       rect:
         serializedVersion: 2
-        x: 50
+        x: 0
         y: 10
         width: 10
         height: 10
@@ -950,8 +1025,8 @@ TextureImporter:
       name: DemonSlayer Atlas_33
       rect:
         serializedVersion: 2
-        x: 50
-        y: 0
+        x: 10
+        y: 20
         width: 10
         height: 10
       alignment: 0
@@ -972,7 +1047,7 @@ TextureImporter:
       name: DemonSlayer Atlas_34
       rect:
         serializedVersion: 2
-        x: 60
+        x: 10
         y: 10
         width: 10
         height: 10
@@ -994,8 +1069,8 @@ TextureImporter:
       name: DemonSlayer Atlas_35
       rect:
         serializedVersion: 2
-        x: 60
-        y: 0
+        x: 20
+        y: 20
         width: 10
         height: 10
       alignment: 0
@@ -1016,10 +1091,10 @@ TextureImporter:
       name: DemonSlayer Atlas_36
       rect:
         serializedVersion: 2
-        x: 70
-        y: 0
-        width: 20
-        height: 15
+        x: 20
+        y: 10
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1034,11 +1109,561 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_37
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 20
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 669582ca34213a680800000000000000
+      internalID: -8745125969562936986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_38
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 10
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80d752fbba9e46f50800000000000000
+      internalID: 6873875855129804040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_39
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 20
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60841790dca5b7750800000000000000
+      internalID: 6303731940108355590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_40
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 10
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dd654557f70a3ca0800000000000000
+      internalID: -6036503591667798572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_41
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 20
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea478a2eb42613190800000000000000
+      internalID: -7984492586286418770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_42
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 10
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beea041331d700a10800000000000000
+      internalID: 1873634966370299627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_43
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 20
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb3857d9e1fee4ea0800000000000000
+      internalID: -5886504748156877892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_44
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 10
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161d862efd42dbde0800000000000000
+      internalID: -1315854972127489695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_45
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 20
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ca5a06fd87028ea0800000000000000
+      internalID: -5872122657838048569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_46
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 10
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0ff8c3a4dbd2f940800000000000000
+      internalID: 5328563015460126478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d996a31ac81ff380800000000000000
+      internalID: -8935395879487628843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_48
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c63b3f8c752bb50800000000000000
+      internalID: 6607440123899636775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_49
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f2c0688be0f13670800000000000000
+      internalID: 8516853264730342133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_50
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e6b5a01cc83cab30800000000000000
+      internalID: 4299874193335760608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_51
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f488d6cb7c22d7420800000000000000
+      internalID: 2629295998709368911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_52
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76770352763438f80800000000000000
+      internalID: -8105560794052135065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_53
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eec862ab65206890800000000000000
+      internalID: -7466927037963776281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_54
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50456943c8db371b0800000000000000
+      internalID: -5659971896799243259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_55
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 10
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c51aa60dbeaea170800000000000000
+      internalID: 8191676899117372867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_56
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c38117cc754e39bd0800000000000000
+      internalID: -2624503092083615684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_57
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 0
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 276227102224582c0800000000000000
+      internalID: -4430061944628435342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_58
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 905a8caecb9fa78d0800000000000000
+      internalID: -2847689224570231543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_59
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 0
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ce3af8e24476510800000000000000
+      internalID: 1542276364166753288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_60
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0637b298146d64820800000000000000
+      internalID: 2902242586849407840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DemonSlayer Atlas_61
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 841bcdad85b08c4e0800000000000000
+      internalID: -1961305161462927032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -1079,9 +1704,34 @@ TextureImporter:
       DemonSlayer Atlas_34: -8331441990704909526
       DemonSlayer Atlas_35: 7650802203679058553
       DemonSlayer Atlas_36: 6548266905973711447
+      DemonSlayer Atlas_37: -8745125969562936986
+      DemonSlayer Atlas_38: 6873875855129804040
+      DemonSlayer Atlas_39: 6303731940108355590
       DemonSlayer Atlas_4: -6120305953815498058
+      DemonSlayer Atlas_40: -6036503591667798572
+      DemonSlayer Atlas_41: -7984492586286418770
+      DemonSlayer Atlas_42: 1873634966370299627
+      DemonSlayer Atlas_43: -5886504748156877892
+      DemonSlayer Atlas_44: -1315854972127489695
+      DemonSlayer Atlas_45: -5872122657838048569
+      DemonSlayer Atlas_46: 5328563015460126478
+      DemonSlayer Atlas_47: -8935395879487628843
+      DemonSlayer Atlas_48: 6607440123899636775
+      DemonSlayer Atlas_49: 8516853264730342133
       DemonSlayer Atlas_5: -3274953255728299112
+      DemonSlayer Atlas_50: 4299874193335760608
+      DemonSlayer Atlas_51: 2629295998709368911
+      DemonSlayer Atlas_52: -8105560794052135065
+      DemonSlayer Atlas_53: -7466927037963776281
+      DemonSlayer Atlas_54: -5659971896799243259
+      DemonSlayer Atlas_55: 8191676899117372867
+      DemonSlayer Atlas_56: -2624503092083615684
+      DemonSlayer Atlas_57: -4430061944628435342
+      DemonSlayer Atlas_58: -2847689224570231543
+      DemonSlayer Atlas_59: 1542276364166753288
       DemonSlayer Atlas_6: 6635875959388189542
+      DemonSlayer Atlas_60: 2902242586849407840
+      DemonSlayer Atlas_61: -1961305161462927032
       DemonSlayer Atlas_7: 8992818534492605912
       DemonSlayer Atlas_8: 5712997117237567866
       DemonSlayer Atlas_9: -5053694517552376108
